@@ -90,6 +90,11 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtPayer.Text))
+            {
+                MessageBox.Show("Montant Paye Vide !!!!");
+                    return;
+            }
             if (!EcheanceState)
             {
                 dataGridView1.Rows.Add(new object[] { comboBoxType.SelectedValue, txtPayer.Text, DateTime.Now.ToShortDateString(), EcheanceState, !EcheanceState });
