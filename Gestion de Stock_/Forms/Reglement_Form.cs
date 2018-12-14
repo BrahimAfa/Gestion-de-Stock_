@@ -90,12 +90,18 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtPayer.Text))
+            if (!IsArticleChosen)
+            {
+                MessageBox.Show("choisir un Article!!!");
+                return;
+            }
+            if (String.IsNullOrEmpty(txtPayer.Text) )
             {
                 MessageBox.Show("Montant Paye Vide !!!!");
                     return;
             }
-            if (!EcheanceState)
+         
+            if (!EcheanceState )
             {
                 dataGridView1.Rows.Add(new object[] { comboBoxType.SelectedValue, txtPayer.Text, DateTime.Now.ToShortDateString(), EcheanceState, !EcheanceState });
 
@@ -105,6 +111,23 @@ namespace Gestion_de_Stock_.Forms
                 dataGridView1.Rows.Add(new object[] { comboBoxType.SelectedValue, txtPayer.Text, datetimepickerECH.Value.ToShortDateString(), EcheanceState, !EcheanceState });
 
             }
+            calculate_datagrid();
+
+        }
+
+        void calculate_datagrid()
+        {
+            if (dataGridView1.Rows.Count == 0) { 
+                MessageBox.Show("Data Gride View est Vide");
+                return;
+            }
+            decimal sum = 0;
+            foreach (DataGridViewRow dr in dataGridView1.Rows)
+            {
+                sum += Convert.ToDecimal(dr.Cells[1].Value);
+            }
+            lblTotalReg.Text = sum.ToString("0.00");
+            lblRestPayer.Text = (Decimal.Parse(lblMontant.Text) - sum).ToString();
         }
     }
 }
