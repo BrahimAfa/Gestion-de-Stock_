@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Gestion_de_Stock_.Forms
       
         public bool EcheanceState { get; set; }
         public bool IsArticleChosen { get; set; }
-        DataAccess data = new DataAccess();
+        DataAccess DA = new DataAccess();
         private void Reglement_Form_Load(object sender, EventArgs e)
         {
            
@@ -63,7 +64,7 @@ namespace Gestion_de_Stock_.Forms
                 return;
             }
             IsArticleChosen = true ;
-            Calculate_Prix(data.GetArticlePrixVent(comboBoxArticle.SelectedValue.ToString()));
+            Calculate_Prix(DA.GetArticlePrixVent(comboBoxArticle.SelectedValue.ToString()));
         }
         void Calculate_Prix(decimal Montant)
         {
@@ -129,5 +130,58 @@ namespace Gestion_de_Stock_.Forms
             lblTotalReg.Text = sum.ToString("0.00");
             lblRestPayer.Text = (Decimal.Parse(lblMontant.Text) - sum).ToString();
         }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            DA.AddFacture(RemplirDataset());
+            if (DA.IsDone)
+            {
+                MessageBox.Show("Bien AJouter");
+            }
+        }
+        DataSet RemplirDataset()
+        {
+
+            DataSet ds = new DataSet();
+
+            ds.Tables.Add("Facture");
+            ds.Tables["Facture"].Columns.AddRange(new DataColumn[]
+            {
+                    new DataColumn ("NumFacture"),
+                    new DataColumn ("Client"),
+                    new DataColumn ("Date"),
+                    new DataColumn ("MontantFact")
+            });
+            ds.Tables["Facture"].Rows.Add(new object[] { txtNumFact.Text, comboBoxClient.SelectedValue, DateTime.Now.ToShortDateString() , Convert.ToDecimal(lblMontant.Text) });
+            //   Facture Reg Detail_Reg
+            ds.Tables.Add("Reg");
+            ds.Tables["Reg"].Columns.AddRange(new DataColumn[]
+  {
+                    new DataColumn ("NumReg"),
+                    new DataColumn ("Date"),
+                    new DataColumn ("NumFact")
+                   
+  });
+            ds.Tables["Reg"].Rows.Add(new object[] { lblNumReg.Text, DateTime.Now.ToShortDateString(), txtNumFact.Text });
+
+            ds.Tables.Add("Detail_Reg");
+            ds.Tables["Detail_Reg"].Columns.AddRange(new DataColumn[]
+  {
+                    new DataColumn ("Numreg"),
+                    new DataColumn ("Type"),
+                    new DataColumn ("MontantReg"),
+                    new DataColumn ("Ref"),
+                    new DataColumn ("Dateech"),
+                    new DataColumn ("Encais")
+  });
+            foreach (DataGridViewRow dr in dataGridView1.Rows)
+            {
+                ds.Tables["Detail_Reg"].Rows.Add(new object[] { lblNumReg.Text, dr.Cells[0].Value,dr.Cells[1].Value,comboBoxArticle.SelectedValue,dr.Cells[2].Value, dr.Cells[4].Value });
+            }
+
+            return ds;
+
+        }
+        
     }
 }

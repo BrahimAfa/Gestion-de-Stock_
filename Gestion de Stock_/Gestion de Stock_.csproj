@@ -111,6 +111,12 @@
     <Compile Include="Forms\Devis_Report.Designer.cs">
       <DependentUpon>Devis_Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Facture_Cherch_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Facture_Cherch_Form.Designer.cs">
+      <DependentUpon>Facture_Cherch_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Devis_Report.resx">
       <DependentUpon>Devis_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Facture_Cherch_Form.resx">
+      <DependentUpon>Facture_Cherch_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
