@@ -80,13 +80,13 @@ namespace Gestion_de_Stock_.Forms
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != (char)Keys.Delete;
 
         }
-      
+
         private void comboBoxType_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
             datetimepickerECH.Enabled = EcheanceState = comboBoxType.SelectedValue.ToString() == "1" ? false : true;
 
-         
+
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
@@ -133,6 +133,12 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count==0)
+            {
+
+                MessageBox.Show("Pas des données saisir !!!");
+                return;
+            }
             DA.AddFacture(RemplirDataset());
             if (DA.IsDone)
             {

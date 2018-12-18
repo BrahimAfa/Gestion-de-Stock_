@@ -22,8 +22,7 @@ namespace Gestion_de_Stock_.DAL
         public  bool IsDone { get; private set; }
         // this proprieter  gives me the state of a fonction is been done(complete) or not (a problem in the midlle)
         public static bool cnxChecker;
-        public DataAccess()
-        { }
+        public DataAccess(){ }
 
         
 
@@ -212,11 +211,8 @@ namespace Gestion_de_Stock_.DAL
                     MessageBox.Show("anythign you do now is not gonna saved in our datatbase\n" +
                                      "so you should fix the problem first \n\n" +
                                   " Message Error : " + ex.Message + "");
-                    
-                    //else
-                    //{
-                    //    MessageBox.Show(ex.Message);
-                    //}
+         
+          
 
                 } }
             }
