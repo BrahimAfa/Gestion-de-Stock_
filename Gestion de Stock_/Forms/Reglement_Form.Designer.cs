@@ -35,6 +35,7 @@
             AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reglement_Form));
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
@@ -79,9 +80,9 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.animator1 = new AnimatorNS.Animator(this.components);
             this.animator2 = new AnimatorNS.Animator(this.components);
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,6 +95,7 @@
             // 
             // pnlContainer
             // 
+            this.pnlContainer.Controls.Add(this.bunifuFlatButton3);
             this.pnlContainer.Controls.Add(this.bunifuFlatButton2);
             this.pnlContainer.Controls.Add(this.groupBox1);
             this.pnlContainer.Controls.Add(this.groupBox2);
@@ -104,6 +106,45 @@
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(792, 428);
             this.pnlContainer.TabIndex = 22;
+            // 
+            // bunifuFlatButton3
+            // 
+            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(69)))));
+            this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(69)))));
+            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton3.BorderRadius = 0;
+            this.bunifuFlatButton3.ButtonText = "   Effacer les Champs";
+            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animator2.SetDecoration(this.bunifuFlatButton3, AnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.bunifuFlatButton3, AnimatorNS.DecorationType.None);
+            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton3.Iconimage = global::Gestion_de_Stock_.Properties.Resources.icons8_Clear_Symbol_96px_1;
+            this.bunifuFlatButton3.Iconimage_right = null;
+            this.bunifuFlatButton3.Iconimage_right_Selected = null;
+            this.bunifuFlatButton3.Iconimage_Selected = null;
+            this.bunifuFlatButton3.IconMarginLeft = 0;
+            this.bunifuFlatButton3.IconMarginRight = 0;
+            this.bunifuFlatButton3.IconRightVisible = true;
+            this.bunifuFlatButton3.IconRightZoom = 0D;
+            this.bunifuFlatButton3.IconVisible = true;
+            this.bunifuFlatButton3.IconZoom = 60D;
+            this.bunifuFlatButton3.IsTab = false;
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(419, 394);
+            this.bunifuFlatButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
+            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(69)))));
+            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(54)))), ((int)(((byte)(46)))));
+            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton3.selected = false;
+            this.bunifuFlatButton3.Size = new System.Drawing.Size(174, 34);
+            this.bunifuFlatButton3.TabIndex = 62;
+            this.bunifuFlatButton3.Text = "   Effacer les Champs";
+            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
             // 
             // bunifuFlatButton2
             // 
@@ -730,6 +771,11 @@
             this.bunifuDragControl2.TargetControl = this.pnlExit;
             this.bunifuDragControl2.Vertical = true;
             // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 10;
+            this.bunifuElipse2.TargetControl = this;
+            // 
             // animator1
             // 
             this.animator1.AnimationType = AnimatorNS.AnimationType.Transparent;
@@ -772,11 +818,6 @@
             animation1.TransparencyCoeff = 0F;
             this.animator2.DefaultAnimation = animation1;
             this.animator2.Interval = 15;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 10;
-            this.bunifuElipse2.TargetControl = this;
             // 
             // Reglement_Form
             // 
@@ -848,8 +889,6 @@
         private System.Windows.Forms.Label lblMontant;
         private System.Windows.Forms.Label lblNumReg;
         private System.Windows.Forms.Label label33;
-        private AnimatorNS.Animator animator2;
-        private AnimatorNS.Animator animator1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
@@ -859,5 +898,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn TXREMISE;
         private System.Windows.Forms.DataGridViewCheckBoxColumn PU_HT;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private AnimatorNS.Animator animator2;
+        private AnimatorNS.Animator animator1;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
     }
 }

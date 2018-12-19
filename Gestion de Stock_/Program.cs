@@ -17,7 +17,7 @@ namespace Gestion_de_Stock_
             //832, 491
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Reglement_Form());
+            Application.Run(new Forms.Facture_Cherch_Form());
         }
     }
 }

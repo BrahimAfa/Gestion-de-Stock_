@@ -12,19 +12,19 @@ namespace Gestion_de_Stock_.DAL
     class DataAccess
     {
 
-     public static SqlConnection con = new SqlConnection(@Properties.Settings.Default.StringConnection);
+        public static SqlConnection con = new SqlConnection(@Properties.Settings.Default.StringConnection);
         static SqlCommand cmd;
         static SqlDataAdapter da;
         public static DataSet MainData = new DataSet();
-      
-                      /* Here i'm gonna Start ADD Fonctions */     
 
-        public  bool IsDone { get; private set; }
+        /* Here i'm gonna Start ADD Fonctions */
+
+        public bool IsDone { get; private set; }
         // this proprieter  gives me the state of a fonction is been done(complete) or not (a problem in the midlle)
         public static bool cnxChecker;
-        public DataAccess(){ }
+        public DataAccess() { }
 
-        
+
 
         #region Fille_Dataset  
 
@@ -43,16 +43,16 @@ namespace Gestion_de_Stock_.DAL
         public static DataTable GetArticles()
         {
             open();
-            if (MainData.Tables["Articles"]!=null)
+            if (MainData.Tables["Articles"] != null)
             {
                 MainData.Tables["Articles"].Clear();
             }
-           
+
             da = new SqlDataAdapter("select * from ARTICLES", con);
             da.Fill(MainData, "Articles");
             close();
             return MainData.Tables["Articles"];
-            
+
         }
         public static DataTable GetClient()
         {
@@ -65,12 +65,12 @@ namespace Gestion_de_Stock_.DAL
             da.Fill(MainData, "Clients");
             close();
             return MainData.Tables["Clients"];
-           
+
         }
         public static DataTable GetDevis()
         {
             open();
-           
+
             if (MainData.Tables["Devis"] != null)
             {
                 MainData.Tables["Devis"].Clear();
@@ -104,13 +104,13 @@ namespace Gestion_de_Stock_.DAL
             {
                 MainData.Tables["D_Devis"].Clear();
             }
-            da = new SqlDataAdapter("select * from Detail_Devis where NUMDEVIS = '"+ NumDevis + "'", con);
+            da = new SqlDataAdapter("select * from Detail_Devis where NUMDEVIS = '" + NumDevis + "'", con);
             da.Fill(MainData, "D_Devis");
             close();
             return MainData.Tables["D_Devis"];
 
         }
-       
+
         public static DataTable GetBL()
         {
             open();
@@ -146,20 +146,20 @@ namespace Gestion_de_Stock_.DAL
             da.Fill(dt);
             return dt;
         }
-        public  bool IsArticlExist(string Ref)
+        public bool IsArticlExist(string Ref)
         {
-           
+
             open();
-          
-            cmd = new SqlCommand("Select * from ARTICLES Where Ref = '"+Ref+"'",con);
-            SqlDataReader dr= cmd.ExecuteReader();
-            
+
+            cmd = new SqlCommand("Select * from ARTICLES Where Ref = '" + Ref + "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
             bool state = !dr.HasRows ? true : false;
             dr.Close();
             close();
 
             return state;
-            
+
         }
         public decimal GetArticlePrixVent(string Ref)
         {
@@ -177,7 +177,7 @@ namespace Gestion_de_Stock_.DAL
                 open();
                 decimal TXTVA = 0;
                 cmd = new SqlCommand("SELECT TXTVA FROM ARTICLES WHERE REF = '" + Ref + "'", con);
-                TXTVA = Convert.ToDecimal( cmd.ExecuteScalar());
+                TXTVA = Convert.ToDecimal(cmd.ExecuteScalar());
                 close();
                 return TXTVA;
             }
@@ -187,7 +187,7 @@ namespace Gestion_de_Stock_.DAL
                 MessageBox.Show(EX.Message);
             }
             return 0;
-            
+
         }
         public static void open()
         {
@@ -211,13 +211,13 @@ namespace Gestion_de_Stock_.DAL
                     MessageBox.Show("anythign you do now is not gonna saved in our datatbase\n" +
                                      "so you should fix the problem first \n\n" +
                                   " Message Error : " + ex.Message + "");
-         
-          
+
+
 
                 } }
-            }
+        }
         // override object.Equals
-  
+
 
         static public void close()
         {
@@ -227,7 +227,7 @@ namespace Gestion_de_Stock_.DAL
             }
         }
 
-      public  void Ajouter_BD(Manage_Stock ajouter, SqlParameter[] param=null, DataSet ds=null)
+        public void Ajouter_BD(Manage_Stock ajouter, SqlParameter[] param = null, DataSet ds = null)
         {
 
             switch (ajouter)
@@ -236,7 +236,7 @@ namespace Gestion_de_Stock_.DAL
                     ajouter_Article(param);
                     break;
                 case Manage_Stock.BL:
-                   
+
                     ajouter_BL(ds);
                     break;
                 case Manage_Stock.Devis:
@@ -248,9 +248,9 @@ namespace Gestion_de_Stock_.DAL
                 case Manage_Stock.Client:
                     ajouter_Client(param);
                     break;
-           
-                
-     
+
+
+
                 default:
                     break;
             }
@@ -302,8 +302,8 @@ namespace Gestion_de_Stock_.DAL
         #endregion
 
         #region FONCTION_DEVIS
-       
-        void ajouter_Devis( DataSet ds)
+
+        void ajouter_Devis(DataSet ds)
         {
             //                         @NUM,@IDCLIENT,@OBSERV
             open();
@@ -315,29 +315,29 @@ namespace Gestion_de_Stock_.DAL
             try
             {
 
-                        SqlParameter[] _params =new SqlParameter[]
-                {
+                SqlParameter[] _params = new SqlParameter[]
+        {
                // @NUM,@IDCLIENT,@OBSERV
                 new SqlParameter("@NUM",ds.Tables["devis"].Rows[0]["NUM"].ToString()),
                  new SqlParameter("@IDCLIENT",Convert.ToInt32( ds.Tables["devis"].Rows[0]["IDCLIENT"].ToString())),
                   new SqlParameter("@OBSERV",ds.Tables["devis"].Rows[0]["OBSERV"].ToString())
-                };
+        };
 
 
                 cmd.CommandText = "Insert into DEVIS ( NUMDEVIS ,IDCLIENT,OBSERVATION) values (@NUM,@IDCLIENT,@OBSERV)";
-                    cmd.Parameters.AddRange(_params);
-                    cmd.ExecuteNonQuery();
-              
-              
+                cmd.Parameters.AddRange(_params);
+                cmd.ExecuteNonQuery();
+
+
                 //clearing params to add new ones.
-              
+
                 //secondly adding  "Detail Devis" wuth his params.
                 foreach (DataRow item in ds.Tables["Detail_Devis"].Rows)
                 {
                     cmd.Parameters.Clear();
-                    SqlParameter[] _param =new SqlParameter []
+                    SqlParameter[] _param = new SqlParameter[]
                         {
-                
+
                             new SqlParameter("@NumDvis",item["NumDvis"].ToString()),
                              new SqlParameter("@REF",item["REF"].ToString()),
                               new SqlParameter("@QTE",Convert.ToInt32(item["QTE"])),
@@ -350,12 +350,12 @@ namespace Gestion_de_Stock_.DAL
                     cmd.Parameters.AddRange(_param);
                     cmd.ExecuteNonQuery();
                 }
-                  
-                    
-              
+
+
+
 
                 trans.Commit();
-                
+
                 IsDone = true; // if you asking whats done the adding Fonction is the one is done
 
             }
@@ -376,7 +376,7 @@ namespace Gestion_de_Stock_.DAL
                     MessageBox.Show(ex1.Message);
                 }
 
-            }finally
+            } finally
             {
                 close();
             }
@@ -465,7 +465,7 @@ namespace Gestion_de_Stock_.DAL
                 close();
             }
         }
-        
+
 
 
 
@@ -501,23 +501,23 @@ namespace Gestion_de_Stock_.DAL
             Devis,
             Famille,
             Client,
-           
+
         }
 
-      public static  string GeneratNums(bool IsBL=false)
+        public static string GeneratNums(bool IsBL = false)
         {
-     
+
             string NumDevis;
             open();
 
             if (IsBL)
             {
-            cmd = new SqlCommand("select Max(NUMBL) from BL", con);
+                cmd = new SqlCommand("select Max(NUMBL) from BL", con);
 
             }
             else
             {
-             cmd = new SqlCommand("select Max(NUMDEVIS) from Devis", con);
+                cmd = new SqlCommand("select Max(NUMDEVIS) from Devis", con);
 
             }
 
@@ -535,7 +535,7 @@ namespace Gestion_de_Stock_.DAL
             close();
             return String.Concat("00001", "/", DateTime.Now.Year);
 
-          //  select Max(REF) from ARTICLES
+            //  select Max(REF) from ARTICLES
         }
         public static string GeneratReglementsID()
         {
@@ -543,20 +543,20 @@ namespace Gestion_de_Stock_.DAL
             string Reg;
             open();
 
-                cmd = new SqlCommand("select Max(IdReg) from REGLEMENT", con);
+            cmd = new SqlCommand("select Max(IdReg) from REGLEMENT", con);
             if (!cmd.ExecuteScalar().Equals(DBNull.Value))
             {
                 Reg = (string)cmd.ExecuteScalar();
                 var splitedNum = Reg.Split('-').ToArray();
                 int Num = Convert.ToInt32(splitedNum[1]);
                 Num++;
-                Reg = String.Concat( "REG", "-", Num.ToString("D5"));
+                Reg = String.Concat("REG", "-", Num.ToString("D5"));
                 return Reg;
             }
             close();
             return String.Concat("REG", "-", "00001");
 
-            
+
         }
         public static string GeneratFactureID()
         {
@@ -585,7 +585,7 @@ namespace Gestion_de_Stock_.DAL
             string Ref;
             open();
 
-                cmd = new SqlCommand("select Max(REF) from ARTICLES", con);
+            cmd = new SqlCommand("select Max(REF) from ARTICLES", con);
 
             if (!cmd.ExecuteScalar().Equals(DBNull.Value))
             {
@@ -601,7 +601,7 @@ namespace Gestion_de_Stock_.DAL
 
             //  
         }
-        public (DataTable Devis,DataTable Detail_Devis) Bl_Par_Devis(string Ref)
+        public (DataTable Devis, DataTable Detail_Devis) Bl_Par_Devis(string Ref)
         {
             open();
             DataTable Devis = new DataTable();
@@ -609,12 +609,12 @@ namespace Gestion_de_Stock_.DAL
 
             da = new SqlDataAdapter("Select * from Devis where NumDevis = '" + Ref + "'", con);
             da.Fill(Devis);
-            if (Devis.Rows.Count<=0)
+            if (Devis.Rows.Count <= 0)
             {
                 IsDone = false;
                 close();
-                return( null,null);
-                
+                return (null, null);
+
             }
             da = new SqlDataAdapter("Select * from Detail_Devis where NumDevis = '" + Ref + "'", con);
             da.Fill(Detail_Devis);
@@ -649,7 +649,7 @@ namespace Gestion_de_Stock_.DAL
         /* Here i'm gonna Start Delete Fonctions */
 
 
-        public void Supprimer_BD(Manage_Stock ajouter,string PK)
+        public void Supprimer_BD(Manage_Stock ajouter, string PK)
         {
 
             switch (ajouter)
@@ -661,16 +661,16 @@ namespace Gestion_de_Stock_.DAL
                     IsDone = Suppr_BL(PK);
                     break;
                 case Manage_Stock.Devis:
-                    IsDone= Suppr_Devis(PK);
+                    IsDone = Suppr_Devis(PK);
                     break;
                 case Manage_Stock.Famille:
-                            // NOT YET  
+                    // NOT YET  
                     break;
                 case Manage_Stock.Client:
-                   IsDone= Suppr_CLIENTE(PK);
+                    IsDone = Suppr_CLIENTE(PK);
                     break;
 
-                 
+
 
                 default:
                     break;
@@ -689,7 +689,7 @@ namespace Gestion_de_Stock_.DAL
 
                 return true;
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
@@ -735,7 +735,7 @@ namespace Gestion_de_Stock_.DAL
 
         #region FONCTION_Devis
 
-        public void Suppr_Article_Devis(string Ref,string num)
+        public void Suppr_Article_Devis(string Ref, string num)
         {
             open();
 
@@ -746,7 +746,7 @@ namespace Gestion_de_Stock_.DAL
                 cmd.Parameters.AddWithValue("@Ref", Ref);
                 cmd.Parameters.AddWithValue("@Num", num);
                 cmd.ExecuteNonQuery();
-           
+
 
             }
             catch (Exception ex)
@@ -760,7 +760,7 @@ namespace Gestion_de_Stock_.DAL
             {
                 close();
             }
-        
+
 
         }
         private bool Suppr_Devis(string num)
@@ -852,7 +852,7 @@ namespace Gestion_de_Stock_.DAL
         #endregion
         /* Here i'm gonna Start Modify Fonctions */
 
-        public void Modifier_BD(Manage_Stock ajouter, SqlParameter[] param=null,DataSet ds=null)
+        public void Modifier_BD(Manage_Stock ajouter, SqlParameter[] param = null, DataSet ds = null)
         {
 
             switch (ajouter)
@@ -902,7 +902,7 @@ namespace Gestion_de_Stock_.DAL
         }
         #endregion
 
-        
+
         #region FONCTION_CLIENT
         bool Modifier_Client(SqlParameter[] param)
         {
@@ -920,13 +920,13 @@ namespace Gestion_de_Stock_.DAL
             }
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show(ex.Message);
                 return false;
             }
         }
         #endregion
-       
+
         #region FONCTION_DEVIS
 
         void Modifier_Devis(DataSet ds)
@@ -1013,7 +1013,7 @@ namespace Gestion_de_Stock_.DAL
 
         #region FONCTION_BL
 
-       private void Modifier_BL(DataSet ds)
+        private void Modifier_BL(DataSet ds)
         {
             //                         @NUM,@IDCLIENT,@OBSERV
             open();
@@ -1142,13 +1142,13 @@ namespace Gestion_de_Stock_.DAL
 
                 };
 
-               //Insert Into Facture;
-                    cmd.CommandText =
- "Insert into FACTURE values (@numfact,@idclient,@datefact,@Montant)";
-                    cmd.Parameters.AddRange(_param);
-                    cmd.ExecuteNonQuery();
+                //Insert Into Facture;
+                cmd.CommandText =
+"Insert into FACTURE values (@numfact,@idclient,@datefact,@Montant)";
+                cmd.Parameters.AddRange(_param);
+                cmd.ExecuteNonQuery();
                 // Clearing params
-                    cmd.Parameters.Clear();
+                cmd.Parameters.Clear();
 
                 //add new params;
                 //add Reglement
@@ -1158,7 +1158,7 @@ namespace Gestion_de_Stock_.DAL
                 new SqlParameter("@numreg", ds.Tables["Reg"].Rows[0][0].ToString()),
                 new SqlParameter("@datereg", DateTime.Parse(ds.Tables["Reg"].Rows[0][1].ToString())),
                 new SqlParameter("@numfact", ds.Tables["Reg"].Rows[0][2].ToString())
-            
+
 
                 };
 
@@ -1167,9 +1167,9 @@ namespace Gestion_de_Stock_.DAL
                 cmd.Parameters.AddRange(_param2);
                 cmd.ExecuteNonQuery();
 
-               
 
-    
+
+
 
                 //clearing params to add new ones.
 
@@ -1189,8 +1189,8 @@ namespace Gestion_de_Stock_.DAL
                             new SqlParameter("@DateEch",Convert.ToDateTime(item[4])),
                             new SqlParameter("@Encais",Convert.ToBoolean(item[5]))
                         };
-                         cmd.CommandText = 
-            "Insert into Detail_Reg Values (@IdReg,@Idtype,@Montant,@Ref,@DateEch,@Encais)";
+                    cmd.CommandText =
+       "Insert into Detail_Reg Values (@IdReg,@Idtype,@Montant,@Ref,@DateEch,@Encais)";
                     cmd.Parameters.AddRange(_params);
 
                     cmd.ExecuteNonQuery();
@@ -1228,7 +1228,17 @@ namespace Gestion_de_Stock_.DAL
             }
 
         }
-    }
+
+        public DataTable GetDonnerFacture()
+        {
+            DataTable dt = new DataTable();
+            da = new SqlDataAdapter("select * from Fact_de_Stock", con);
+            da.Fill(dt);
+
+            return dt;
+        }
+        
+    } 
 
 
 }

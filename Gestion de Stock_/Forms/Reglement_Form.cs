@@ -18,13 +18,13 @@ namespace Gestion_de_Stock_.Forms
         {
             InitializeComponent();
         }
-      
+
         public bool EcheanceState { get; set; }
         public bool IsArticleChosen { get; set; }
         DataAccess DA = new DataAccess();
         private void Reglement_Form_Load(object sender, EventArgs e)
         {
-           
+
             SetupComponents();
         }
 
@@ -58,12 +58,12 @@ namespace Gestion_de_Stock_.Forms
 
         private void comboBoxArticle_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (comboBoxArticle.SelectedValue.ToString()=="-1")
+            if (comboBoxArticle.SelectedValue.ToString() == "-1")
             {
                 IsArticleChosen = false;
                 return;
             }
-            IsArticleChosen = true ;
+            IsArticleChosen = true;
             Calculate_Prix(DA.GetArticlePrixVent(comboBoxArticle.SelectedValue.ToString()));
         }
         void Calculate_Prix(decimal Montant)
@@ -96,13 +96,13 @@ namespace Gestion_de_Stock_.Forms
                 MessageBox.Show("choisir un Article!!!");
                 return;
             }
-            if (String.IsNullOrEmpty(txtPayer.Text) )
+            if (String.IsNullOrEmpty(txtPayer.Text))
             {
                 MessageBox.Show("Montant Paye Vide !!!!");
-                    return;
+                return;
             }
-         
-            if (!EcheanceState )
+
+            if (!EcheanceState)
             {
                 dataGridView1.Rows.Add(new object[] { comboBoxType.SelectedValue, txtPayer.Text, DateTime.Now.ToShortDateString(), EcheanceState, !EcheanceState });
 
@@ -112,13 +112,13 @@ namespace Gestion_de_Stock_.Forms
                 dataGridView1.Rows.Add(new object[] { comboBoxType.SelectedValue, txtPayer.Text, datetimepickerECH.Value.ToShortDateString(), EcheanceState, !EcheanceState });
 
             }
-            calculate_datagrid();
 
+            calculate_datagrid();
         }
 
         void calculate_datagrid()
         {
-            if (dataGridView1.Rows.Count == 0) { 
+            if (dataGridView1.Rows.Count == 0) {
                 MessageBox.Show("Data Gride View est Vide");
                 return;
             }
@@ -131,20 +131,6 @@ namespace Gestion_de_Stock_.Forms
             lblRestPayer.Text = (Decimal.Parse(lblMontant.Text) - sum).ToString();
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.Rows.Count==0)
-            {
-
-                MessageBox.Show("Pas des données saisir !!!");
-                return;
-            }
-            DA.AddFacture(RemplirDataset());
-            if (DA.IsDone)
-            {
-                MessageBox.Show("Bien AJouter");
-            }
-        }
         DataSet RemplirDataset()
         {
 
@@ -158,7 +144,7 @@ namespace Gestion_de_Stock_.Forms
                     new DataColumn ("Date"),
                     new DataColumn ("MontantFact")
             });
-            ds.Tables["Facture"].Rows.Add(new object[] { txtNumFact.Text, comboBoxClient.SelectedValue, DateTime.Now.ToShortDateString() , Convert.ToDecimal(lblMontant.Text) });
+            ds.Tables["Facture"].Rows.Add(new object[] { txtNumFact.Text, comboBoxClient.SelectedValue, DateTime.Now.ToShortDateString(), Convert.ToDecimal(lblMontant.Text) });
             //   Facture Reg Detail_Reg
             ds.Tables.Add("Reg");
             ds.Tables["Reg"].Columns.AddRange(new DataColumn[]
@@ -166,7 +152,7 @@ namespace Gestion_de_Stock_.Forms
                     new DataColumn ("NumReg"),
                     new DataColumn ("Date"),
                     new DataColumn ("NumFact")
-                   
+
   });
             ds.Tables["Reg"].Rows.Add(new object[] { lblNumReg.Text, DateTime.Now.ToShortDateString(), txtNumFact.Text });
 
@@ -182,12 +168,44 @@ namespace Gestion_de_Stock_.Forms
   });
             foreach (DataGridViewRow dr in dataGridView1.Rows)
             {
-                ds.Tables["Detail_Reg"].Rows.Add(new object[] { lblNumReg.Text, dr.Cells[0].Value,dr.Cells[1].Value,comboBoxArticle.SelectedValue,dr.Cells[2].Value, dr.Cells[4].Value });
+                ds.Tables["Detail_Reg"].Rows.Add(new object[] { lblNumReg.Text, dr.Cells[0].Value, dr.Cells[1].Value, comboBoxArticle.SelectedValue, dr.Cells[2].Value, dr.Cells[4].Value });
             }
 
             return ds;
 
         }
-        
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+
+                MessageBox.Show("Pas des données saisir !!!");
+                return;
+            }
+            DA.AddFacture(RemplirDataset());
+            if (DA.IsDone)
+            {
+                MessageBox.Show("Bien AJouter");
+            }
+        }
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count==0)
+            {
+                return;
+            }
+            if (MessageBox.Show("voulez-vous supprimer les enregistrements", "Effacer", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                dataGridView1.Rows.Clear();
+                txtPayer.Clear();
+                lblTotalReg.Text= "0000";
+                lblRestPayer.Text = "0000";
+            }
+
+        }
+
+      
     }
 }
+    

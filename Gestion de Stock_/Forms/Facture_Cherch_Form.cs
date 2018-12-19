@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Gestion_de_Stock_.DAL;
 namespace Gestion_de_Stock_.Forms
 {
     public partial class Facture_Cherch_Form : Form
     {
+        DataAccess DT;
         public Facture_Cherch_Form()
         {
             InitializeComponent();
+            DT= new DataAccess();
+            dataGridView1.DataSource = DT.GetDonnerFacture();
+        }
+
+        private void Facture_Cherch_Form_Load(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }
