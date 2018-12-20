@@ -40,7 +40,9 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SearchBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlLogo.SuspendLayout();
@@ -49,7 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLogo
@@ -180,7 +182,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bunifuImageButton3);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.SearchBtn);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Font = new System.Drawing.Font("Dank Mono", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,26 +195,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtrer par : ";
             // 
-            // bunifuImageButton3
+            // dateTimePicker1
             // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton3.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_Search_96px_1;
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(760, 12);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(36, 27);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton3.TabIndex = 2;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
+            this.dateTimePicker1.Location = new System.Drawing.Point(518, 12);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(220, 23);
+            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(419, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "SelectItem";
+            this.label2.Visible = false;
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBtn.Enabled = false;
+            this.SearchBtn.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_Search_96px_1;
+            this.SearchBtn.ImageActive = null;
+            this.SearchBtn.Location = new System.Drawing.Point(760, 12);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(36, 27);
+            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchBtn.TabIndex = 2;
+            this.SearchBtn.TabStop = false;
+            this.SearchBtn.Zoom = 10;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // textBox1
             // 
             this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(544, 13);
+            this.textBox1.Location = new System.Drawing.Point(534, 13);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 22);
+            this.textBox1.Size = new System.Drawing.Size(180, 22);
             this.textBox1.TabIndex = 1;
             this.textBox1.Visible = false;
             // 
@@ -227,13 +252,12 @@
             "  Tous",
             "  Num de Facture",
             "  Num de Client",
-            "  Num de Reglement",
-            "  Type de Reglement",
-            "  Date Echéance"});
-            this.comboBox1.Location = new System.Drawing.Point(110, 13);
+            "  Date Facture"});
+            this.comboBox1.Location = new System.Drawing.Point(110, 14);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(178, 22);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // Facture_Cherch_Form
             // 
@@ -257,7 +281,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,8 +298,10 @@
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
+        private Bunifu.Framework.UI.BunifuImageButton SearchBtn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
     }
 }

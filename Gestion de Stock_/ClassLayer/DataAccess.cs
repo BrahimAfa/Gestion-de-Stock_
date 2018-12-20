@@ -1232,7 +1232,7 @@ namespace Gestion_de_Stock_.DAL
         public DataTable GetDonnerFacture()
         {
             DataTable dt = new DataTable();
-            da = new SqlDataAdapter("select * from Fact_de_Stock", con);
+            da = new SqlDataAdapter("select * from Facture", con);
             da.Fill(dt);
 
             return dt;
