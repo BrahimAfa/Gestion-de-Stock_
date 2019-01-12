@@ -283,7 +283,7 @@ namespace Gestion_de_Stock_.Forms
         }
 
         private void radTileDevisRaport_Click(object sender, EventArgs e)
-        {
+        { 
             Hide_Component_WithANimation();
             new Devis_Report(this.Location, this.Size).Show();
             this.Hide();
