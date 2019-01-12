@@ -181,14 +181,14 @@ namespace Gestion_de_Stock_.Forms
 
         {
          
-            Hide_Component_WithANimation();
+         //   Hide_Component_WithANimation();
          
         
             //animator1.WaitAnimation(this);
             // this.Hide();
  
-            new Ajouter_Articles(this.Location, this.Size).Show(); ;
-            this.Hide();
+            new Ajouter_Articles().ShowDialog(); ;
+            
           //  animator1.Show(_Articles);
        
            
@@ -287,6 +287,17 @@ namespace Gestion_de_Stock_.Forms
             Hide_Component_WithANimation();
             new Devis_Report(this.Location, this.Size).Show();
             this.Hide();
+        }
+
+        private void radTileElement10_Click(object sender, EventArgs e)
+        {
+            //Hide_Component_WithANimation();
+            new Reglement_Form().ShowDialog();
+        }
+
+        private void radTileElement11_Click(object sender, EventArgs e)
+        {
+            new Facture_Cherch_Form().ShowDialog();
         }
     }
 }

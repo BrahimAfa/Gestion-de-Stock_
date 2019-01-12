@@ -131,5 +131,36 @@ namespace Gestion_de_Stock_.Forms
             dv_Filter.RowFilter = $"{ColumnChosed[ChosedIndexFilter]} = '#{dateTimePicker1.Value.ToShortDateString()}#' ";
             dataGridView1.DataSource = dv_Filter;
         }
+        int Index;
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Index = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+            // MessageBox.Show(Index.ToString());
+
+            if (Index >= 0)
+            {
+
+                if (e.Button == MouseButtons.Right)
+                {
+                    dataGridView1.Rows[Index].Selected = true;
+                    ContextMenuStrip CM = new ContextMenuStrip();
+                    
+                    CM.Items.Add("Detaill...").Click += DetaillCM_Click;
+                    CM.Show(dataGridView1, e.Location);
+
+
+                }
+            }
+        }
+        private void DetaillCM_Click(object sender, EventArgs e)
+        {
+            //    MessageBox.Show("detaill CLICKED ");
+            new Facture_Detail(dataGridView1.Rows[Index].Cells[0].Value.ToString()).ShowDialog();
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

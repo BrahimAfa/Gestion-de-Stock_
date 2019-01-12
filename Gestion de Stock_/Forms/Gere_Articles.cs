@@ -18,28 +18,24 @@ namespace Gestion_de_Stock_.Forms
     {
         DataView dv = new DataView();
         DAL.DataAccess DA = new DataAccess();
-        Point _LocationPoint;
-        Size size;
+       // Point _LocationPoint;
+       
 
         UC_LocationInForm UC = UC_LocationInForm.Instance;
 
         public Gere_Articles(Point OwnerFormLocaion, Size OwnerFormSize)
         {
             InitializeComponent();
-        
-           
-         
-            _LocationPoint = OwnerFormLocaion;
-            size = OwnerFormSize;
+
             StartTiming();
             UC_Initializ();
         }
-      
+
         private void Gere_Articles_Load(object sender, EventArgs e)
-        {
+        { 
             //comboBox1.
-            this.Location = _LocationPoint;
-            this.Size = size;
+          //  this.Location = _LocationPoint;
+           
             dataGridView1.DataSource = DataAccess.GetArticles();
             comboBox1.SelectedIndex = 0;
            

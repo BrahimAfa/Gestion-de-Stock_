@@ -8,15 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AnimatorNS;
 using Gestion_de_Stock_.DAL;
+using Gestion_de_Stock_.UserControls;
 
 namespace Gestion_de_Stock_.Forms
 {
     public partial class Reglement_Form : Form
     {
+        UC_LocationInForm UC = UC_LocationInForm.Instance;
+
         public Reglement_Form()
         {
             InitializeComponent();
+
+            StartTiming();
+            UC_Initializ();
         }
 
         public bool EcheanceState { get; set; }
@@ -142,9 +149,10 @@ namespace Gestion_de_Stock_.Forms
                     new DataColumn ("NumFacture"),
                     new DataColumn ("Client"),
                     new DataColumn ("Date"),
-                    new DataColumn ("MontantFact")
+                    new DataColumn ("MontantFact"),
+                     new DataColumn ("RestPaye")
             });
-            ds.Tables["Facture"].Rows.Add(new object[] { txtNumFact.Text, comboBoxClient.SelectedValue, DateTime.Now.ToShortDateString(), Convert.ToDecimal(lblMontant.Text) });
+            ds.Tables["Facture"].Rows.Add(new object[] { txtNumFact.Text, comboBoxClient.SelectedValue, DateTime.Now.ToShortDateString(), Convert.ToDecimal(lblMontant.Text), Convert.ToDecimal(lblRestPayer.Text) });
             //   Facture Reg Detail_Reg
             ds.Tables.Add("Reg");
             ds.Tables["Reg"].Columns.AddRange(new DataColumn[]
@@ -204,8 +212,47 @@ namespace Gestion_de_Stock_.Forms
             }
 
         }
+        #region Cummon Thing Betwwen the Forms
+        void StartTiming()
+        {
+            Timer timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += Timer_Tick;
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            timer.Start();
+        }
 
-      
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+
+        }
+
+        void UC_Initializ()
+        {
+
+
+            UC.LabelText = "Reglement";
+
+            UC.Allignment = ContentAlignment.MiddleLeft;
+            UC.Location = new Point(0, 72);
+            UC.Visible = false;
+            pnlLogo.Controls.Add(UC);
+
+            animator2.Show(UC, true, AnimatorNS.Animation.HorizSlide);
+
+            //   animator1.WaitAllAnimations();
+
+        }
+
+
+
+        #endregion
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
     

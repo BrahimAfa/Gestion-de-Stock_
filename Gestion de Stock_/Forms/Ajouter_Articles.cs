@@ -16,16 +16,17 @@ namespace Gestion_de_Stock_.Forms
    
     public partial class Ajouter_Articles : Form
     {
-        Point _LocationPoint;
-        Size size;
+        //Point _LocationPoint;
+        //Size size;
         DataAccess DAT;
         UC_LocationInForm UC = UserControls.UC_LocationInForm.Instance;
-        public Ajouter_Articles(Point OwnerFormLocaion, Size OwnerFormSize)
+       // Point OwnerFormLocaion, Size OwnerFormSize
+        public Ajouter_Articles()
         {
             InitializeComponent();
             StartTiming();
-            _LocationPoint = OwnerFormLocaion;
-            size = OwnerFormSize;
+            //_LocationPoint = OwnerFormLocaion;
+            //size = OwnerFormSize;
         
             UC_Initializ();
             
@@ -70,8 +71,8 @@ namespace Gestion_de_Stock_.Forms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            this.Location = _LocationPoint;
-            this.Size = size;
+            //this.Location = _LocationPoint;
+            //this.Size = size;
             //lblRef.Text = DataAccess.GeneratArticlesRef();
             Remplir_combo();
             
@@ -106,9 +107,9 @@ namespace Gestion_de_Stock_.Forms
         }
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+            //Hide_Component_WithANimation();
 
-            new HomeForm(this.Location,this.Size).Show();
+            //new HomeForm(this.Location,this.Size).Show();
             this.Close();
         }
 

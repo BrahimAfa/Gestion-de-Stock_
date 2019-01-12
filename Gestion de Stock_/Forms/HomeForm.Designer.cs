@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            AnimatorNS.Animation animation8 = new AnimatorNS.Animation();
-            AnimatorNS.Animation animation7 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation10 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation9 = new AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlExit = new System.Windows.Forms.Panel();
@@ -66,6 +66,27 @@
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.animator1 = new AnimatorNS.Animator(this.components);
             this.animator2 = new AnimatorNS.Animator(this.components);
+            this.tileGroupElement1 = new Telerik.WinControls.UI.TileGroupElement();
+            this.tileGroupElement2 = new Telerik.WinControls.UI.TileGroupElement();
+            this.radLiveTileElement1 = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.radLiveTileElement2 = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.radLiveTileElement3 = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileElement5 = new Telerik.WinControls.UI.RadTileElement();
+            this.tileGroupElement3 = new Telerik.WinControls.UI.TileGroupElement();
+            this.radLiveTileElement4 = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.radLiveTileElement5 = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.radLiveTileElement6 = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.radTileElement6 = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileElement7 = new Telerik.WinControls.UI.RadTileElement();
+            this.tileGroupElement4 = new Telerik.WinControls.UI.TileGroupElement();
+            this.radLiveTileElement7 = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.radLiveTileElement8 = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.radLiveTileElement9 = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.radTileElement8 = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileElement9 = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileElement10 = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileElement11 = new Telerik.WinControls.UI.RadTileElement();
             this.pnlExit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -229,6 +250,7 @@
             this.GestionARticles,
             this.GestionVents,
             this.gestionClient,
+            this.tileGroupElement1,
             this.gestionAvancee});
             this.radPanorama1.Location = new System.Drawing.Point(0, 0);
             this.radPanorama1.MouseWheelBehavior = Telerik.WinControls.UI.PanoramaMouseWheelBehavior.Scroll;
@@ -259,13 +281,11 @@
             this.tileAddArticles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tileAddArticles.BorderWidth = 1F;
             this.tileAddArticles.CellPadding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.tileAddArticles.ColSpan = 1;
             this.tileAddArticles.DefaultSize = new System.Drawing.Size(10, 19);
             this.tileAddArticles.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileAddArticles.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_Product_100px2;
             this.tileAddArticles.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.tileAddArticles.Name = "tileAddArticles";
-            this.tileAddArticles.RowSpan = 1;
             this.tileAddArticles.Text = "Ajouter des Articles";
             this.tileAddArticles.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.tileAddArticles.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -277,7 +297,6 @@
             this.tileConsultation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(162)))), ((int)(((byte)(135)))));
             this.tileConsultation.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(193)))), ((int)(((byte)(175)))));
             this.tileConsultation.CellPadding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.tileConsultation.ColSpan = 1;
             this.tileConsultation.Column = 1;
             this.tileConsultation.Image = global::Gestion_de_Stock_.Properties.Resources.Consultation_Product_2;
             this.tileConsultation.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -505,45 +524,351 @@
             // 
             this.animator1.AnimationType = AnimatorNS.AnimationType.Transparent;
             this.animator1.Cursor = null;
-            animation8.AnimateOnlyDifferences = true;
-            animation8.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.BlindCoeff")));
-            animation8.LeafCoeff = 0F;
-            animation8.MaxTime = 1F;
-            animation8.MinTime = 0F;
-            animation8.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicCoeff")));
-            animation8.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicShift")));
-            animation8.MosaicSize = 0;
-            animation8.Padding = new System.Windows.Forms.Padding(0);
-            animation8.RotateCoeff = 0F;
-            animation8.RotateLimit = 0F;
-            animation8.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.ScaleCoeff")));
-            animation8.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.SlideCoeff")));
-            animation8.TimeCoeff = 0F;
-            animation8.TransparencyCoeff = 1F;
-            this.animator1.DefaultAnimation = animation8;
+            animation10.AnimateOnlyDifferences = true;
+            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
+            animation10.LeafCoeff = 0F;
+            animation10.MaxTime = 1F;
+            animation10.MinTime = 0F;
+            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
+            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
+            animation10.MosaicSize = 0;
+            animation10.Padding = new System.Windows.Forms.Padding(0);
+            animation10.RotateCoeff = 0F;
+            animation10.RotateLimit = 0F;
+            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
+            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
+            animation10.TimeCoeff = 0F;
+            animation10.TransparencyCoeff = 1F;
+            this.animator1.DefaultAnimation = animation10;
             this.animator1.Interval = 8;
             // 
             // animator2
             // 
             this.animator2.AnimationType = AnimatorNS.AnimationType.VertSlide;
             this.animator2.Cursor = null;
-            animation7.AnimateOnlyDifferences = true;
-            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
-            animation7.LeafCoeff = 0F;
-            animation7.MaxTime = 1F;
-            animation7.MinTime = 0F;
-            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
-            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
-            animation7.MosaicSize = 0;
-            animation7.Padding = new System.Windows.Forms.Padding(0);
-            animation7.RotateCoeff = 0F;
-            animation7.RotateLimit = 0F;
-            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
-            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
-            animation7.TimeCoeff = 0F;
-            animation7.TransparencyCoeff = 0F;
-            this.animator2.DefaultAnimation = animation7;
+            animation9.AnimateOnlyDifferences = true;
+            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
+            animation9.LeafCoeff = 0F;
+            animation9.MaxTime = 1F;
+            animation9.MinTime = 0F;
+            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
+            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
+            animation9.MosaicSize = 0;
+            animation9.Padding = new System.Windows.Forms.Padding(0);
+            animation9.RotateCoeff = 0F;
+            animation9.RotateLimit = 0F;
+            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
+            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
+            animation9.TimeCoeff = 0F;
+            animation9.TransparencyCoeff = 0F;
+            this.animator2.DefaultAnimation = animation9;
             this.animator2.Interval = 15;
+            // 
+            // tileGroupElement1
+            // 
+            this.tileGroupElement1.CellSize = new System.Drawing.Size(150, 150);
+            this.tileGroupElement1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radTileElement10,
+            this.radTileElement11});
+            this.tileGroupElement1.Name = "tileGroupElement1";
+            this.tileGroupElement1.RowsCount = 2;
+            this.tileGroupElement1.Text = "Facture et Reglement";
+            // 
+            // tileGroupElement2
+            // 
+            this.tileGroupElement2.CellSize = new System.Drawing.Size(150, 150);
+            this.tileGroupElement2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.tileGroupElement2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radLiveTileElement1,
+            this.radLiveTileElement2,
+            this.radLiveTileElement3,
+            this.radTileElement4,
+            this.radTileElement5});
+            this.tileGroupElement2.Name = "tileGroupElement2";
+            this.tileGroupElement2.RowsCount = 2;
+            this.tileGroupElement2.Text = "Gestion Avancée";
+            this.tileGroupElement2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // radLiveTileElement1
+            // 
+            this.radLiveTileElement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement1.ColSpan = 2;
+            this.radLiveTileElement1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement1.Image = global::Gestion_de_Stock_.Properties.Resources.BLmanage;
+            this.radLiveTileElement1.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radLiveTileElement1.Name = "radLiveTileElement1";
+            this.radLiveTileElement1.Text = "Gére les Bon de Livraison";
+            this.radLiveTileElement1.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radLiveTileElement1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radLiveTileElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // radLiveTileElement2
+            // 
+            this.radLiveTileElement2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement2.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement2.Column = 2;
+            this.radLiveTileElement2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement2.Name = "radLiveTileElement2";
+            this.radLiveTileElement2.Text = "Gére Les Familles";
+            this.radLiveTileElement2.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radLiveTileElement2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radLiveTileElement2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement2.TextWrap = true;
+            // 
+            // radLiveTileElement3
+            // 
+            this.radLiveTileElement3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement3.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement3.ColSpan = 2;
+            this.radLiveTileElement3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement3.Image = global::Gestion_de_Stock_.Properties.Resources.BDmanage1;
+            this.radLiveTileElement3.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radLiveTileElement3.Name = "radLiveTileElement3";
+            this.radLiveTileElement3.Row = 1;
+            this.radLiveTileElement3.Text = "Gére les Bon de Devis";
+            this.radLiveTileElement3.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radLiveTileElement3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radLiveTileElement3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // radTileElement4
+            // 
+            this.radTileElement4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement4.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement4.Column = 2;
+            this.radTileElement4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement4.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_nouvelles_80_1;
+            this.radTileElement4.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radTileElement4.Name = "radTileElement4";
+            this.radTileElement4.RightToLeft = false;
+            this.radTileElement4.Row = 1;
+            this.radTileElement4.Text = "Report Devis";
+            this.radTileElement4.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radTileElement4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radTileElement4.TextOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.radTileElement4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement4.TextWrap = true;
+            // 
+            // radTileElement5
+            // 
+            this.radTileElement5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement5.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement5.Column = 3;
+            this.radTileElement5.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement5.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_nouvelles_80_1;
+            this.radTileElement5.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radTileElement5.Name = "radTileElement5";
+            this.radTileElement5.RowSpan = 2;
+            this.radTileElement5.Text = "Raport Bon Laivrison";
+            this.radTileElement5.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radTileElement5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radTileElement5.TextOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.radTileElement5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement5.TextWrap = true;
+            // 
+            // tileGroupElement3
+            // 
+            this.tileGroupElement3.CellSize = new System.Drawing.Size(150, 150);
+            this.tileGroupElement3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.tileGroupElement3.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radLiveTileElement4,
+            this.radLiveTileElement5,
+            this.radLiveTileElement6,
+            this.radTileElement6,
+            this.radTileElement7});
+            this.tileGroupElement3.Name = "tileGroupElement3";
+            this.tileGroupElement3.RowsCount = 2;
+            this.tileGroupElement3.Text = "Gestion Avancée";
+            this.tileGroupElement3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // radLiveTileElement4
+            // 
+            this.radLiveTileElement4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement4.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement4.ColSpan = 2;
+            this.radLiveTileElement4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement4.Image = global::Gestion_de_Stock_.Properties.Resources.BLmanage;
+            this.radLiveTileElement4.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radLiveTileElement4.Name = "radLiveTileElement4";
+            this.radLiveTileElement4.Text = "Gére les Bon de Livraison";
+            this.radLiveTileElement4.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radLiveTileElement4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radLiveTileElement4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // radLiveTileElement5
+            // 
+            this.radLiveTileElement5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement5.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement5.Column = 2;
+            this.radLiveTileElement5.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement5.Name = "radLiveTileElement5";
+            this.radLiveTileElement5.Text = "Gére Les Familles";
+            this.radLiveTileElement5.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radLiveTileElement5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radLiveTileElement5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement5.TextWrap = true;
+            // 
+            // radLiveTileElement6
+            // 
+            this.radLiveTileElement6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement6.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement6.ColSpan = 2;
+            this.radLiveTileElement6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement6.Image = global::Gestion_de_Stock_.Properties.Resources.BDmanage1;
+            this.radLiveTileElement6.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radLiveTileElement6.Name = "radLiveTileElement6";
+            this.radLiveTileElement6.Row = 1;
+            this.radLiveTileElement6.Text = "Gére les Bon de Devis";
+            this.radLiveTileElement6.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radLiveTileElement6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radLiveTileElement6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // radTileElement6
+            // 
+            this.radTileElement6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement6.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement6.Column = 2;
+            this.radTileElement6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement6.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_nouvelles_80_1;
+            this.radTileElement6.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radTileElement6.Name = "radTileElement6";
+            this.radTileElement6.RightToLeft = false;
+            this.radTileElement6.Row = 1;
+            this.radTileElement6.Text = "Report Devis";
+            this.radTileElement6.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radTileElement6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radTileElement6.TextOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.radTileElement6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement6.TextWrap = true;
+            // 
+            // radTileElement7
+            // 
+            this.radTileElement7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement7.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement7.Column = 3;
+            this.radTileElement7.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement7.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_nouvelles_80_1;
+            this.radTileElement7.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radTileElement7.Name = "radTileElement7";
+            this.radTileElement7.RowSpan = 2;
+            this.radTileElement7.Text = "Raport Bon Laivrison";
+            this.radTileElement7.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radTileElement7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radTileElement7.TextOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.radTileElement7.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement7.TextWrap = true;
+            // 
+            // tileGroupElement4
+            // 
+            this.tileGroupElement4.CellSize = new System.Drawing.Size(150, 150);
+            this.tileGroupElement4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.tileGroupElement4.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radLiveTileElement7,
+            this.radLiveTileElement8,
+            this.radLiveTileElement9,
+            this.radTileElement8,
+            this.radTileElement9});
+            this.tileGroupElement4.Name = "tileGroupElement4";
+            this.tileGroupElement4.RowsCount = 2;
+            this.tileGroupElement4.Text = "Gestion Avancée";
+            this.tileGroupElement4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // radLiveTileElement7
+            // 
+            this.radLiveTileElement7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement7.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement7.ColSpan = 2;
+            this.radLiveTileElement7.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement7.Image = global::Gestion_de_Stock_.Properties.Resources.BLmanage;
+            this.radLiveTileElement7.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radLiveTileElement7.Name = "radLiveTileElement7";
+            this.radLiveTileElement7.Text = "Gére les Bon de Livraison";
+            this.radLiveTileElement7.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radLiveTileElement7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radLiveTileElement7.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // radLiveTileElement8
+            // 
+            this.radLiveTileElement8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement8.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement8.Column = 2;
+            this.radLiveTileElement8.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement8.Name = "radLiveTileElement8";
+            this.radLiveTileElement8.Text = "Gére Les Familles";
+            this.radLiveTileElement8.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radLiveTileElement8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radLiveTileElement8.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement8.TextWrap = true;
+            // 
+            // radLiveTileElement9
+            // 
+            this.radLiveTileElement9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement9.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
+            this.radLiveTileElement9.ColSpan = 2;
+            this.radLiveTileElement9.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radLiveTileElement9.Image = global::Gestion_de_Stock_.Properties.Resources.BDmanage1;
+            this.radLiveTileElement9.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radLiveTileElement9.Name = "radLiveTileElement9";
+            this.radLiveTileElement9.Row = 1;
+            this.radLiveTileElement9.Text = "Gére les Bon de Devis";
+            this.radLiveTileElement9.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radLiveTileElement9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radLiveTileElement9.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // radTileElement8
+            // 
+            this.radTileElement8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement8.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement8.Column = 2;
+            this.radTileElement8.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement8.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_nouvelles_80_1;
+            this.radTileElement8.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radTileElement8.Name = "radTileElement8";
+            this.radTileElement8.RightToLeft = false;
+            this.radTileElement8.Row = 1;
+            this.radTileElement8.Text = "Report Devis";
+            this.radTileElement8.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radTileElement8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radTileElement8.TextOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.radTileElement8.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement8.TextWrap = true;
+            // 
+            // radTileElement9
+            // 
+            this.radTileElement9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement9.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(72)))), ((int)(((byte)(146)))));
+            this.radTileElement9.Column = 3;
+            this.radTileElement9.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement9.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_nouvelles_80_1;
+            this.radTileElement9.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radTileElement9.Name = "radTileElement9";
+            this.radTileElement9.RowSpan = 2;
+            this.radTileElement9.Text = "Raport Bon Laivrison";
+            this.radTileElement9.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radTileElement9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radTileElement9.TextOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.radTileElement9.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.radTileElement9.TextWrap = true;
+            // 
+            // radTileElement10
+            // 
+            this.radTileElement10.Name = "radTileElement10";
+            this.radTileElement10.Text = "Facture Reglement";
+            this.radTileElement10.TextWrap = true;
+            this.radTileElement10.Click += new System.EventHandler(this.radTileElement10_Click);
+            // 
+            // radTileElement11
+            // 
+            this.radTileElement11.Column = 1;
+            this.radTileElement11.Name = "radTileElement11";
+            this.radTileElement11.Text = "Consultation";
+            this.radTileElement11.Click += new System.EventHandler(this.radTileElement11_Click);
             // 
             // HomeForm
             // 
@@ -561,6 +886,7 @@
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.pnlExit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
@@ -610,5 +936,26 @@
         private Telerik.WinControls.UI.RadTileElement radTileDevisRaport;
         private Telerik.WinControls.UI.RadTileElement radTileBLRaport;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
+        private Telerik.WinControls.UI.TileGroupElement tileGroupElement1;
+        private Telerik.WinControls.UI.RadTileElement radTileElement10;
+        private Telerik.WinControls.UI.RadTileElement radTileElement11;
+        private Telerik.WinControls.UI.TileGroupElement tileGroupElement2;
+        private Telerik.WinControls.UI.RadLiveTileElement radLiveTileElement1;
+        private Telerik.WinControls.UI.RadLiveTileElement radLiveTileElement2;
+        private Telerik.WinControls.UI.RadLiveTileElement radLiveTileElement3;
+        private Telerik.WinControls.UI.RadTileElement radTileElement4;
+        private Telerik.WinControls.UI.RadTileElement radTileElement5;
+        private Telerik.WinControls.UI.TileGroupElement tileGroupElement3;
+        private Telerik.WinControls.UI.RadLiveTileElement radLiveTileElement4;
+        private Telerik.WinControls.UI.RadLiveTileElement radLiveTileElement5;
+        private Telerik.WinControls.UI.RadLiveTileElement radLiveTileElement6;
+        private Telerik.WinControls.UI.RadTileElement radTileElement6;
+        private Telerik.WinControls.UI.RadTileElement radTileElement7;
+        private Telerik.WinControls.UI.TileGroupElement tileGroupElement4;
+        private Telerik.WinControls.UI.RadLiveTileElement radLiveTileElement7;
+        private Telerik.WinControls.UI.RadLiveTileElement radLiveTileElement8;
+        private Telerik.WinControls.UI.RadLiveTileElement radLiveTileElement9;
+        private Telerik.WinControls.UI.RadTileElement radTileElement8;
+        private Telerik.WinControls.UI.RadTileElement radTileElement9;
     }
 }

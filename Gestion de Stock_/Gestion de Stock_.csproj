@@ -117,6 +117,12 @@
     <Compile Include="Forms\Facture_Cherch_Form.Designer.cs">
       <DependentUpon>Facture_Cherch_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Facture_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Facture_Detail.Designer.cs">
+      <DependentUpon>Facture_Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facture_Cherch_Form.resx">
       <DependentUpon>Facture_Cherch_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Facture_Detail.resx">
+      <DependentUpon>Facture_Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -29,15 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             AnimatorNS.Animation animation2 = new AnimatorNS.Animation();
             AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gere_Articles));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMax = new System.Windows.Forms.TextBox();
+            this.ComboPU = new System.Windows.Forms.ComboBox();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.txtmin = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
@@ -51,23 +59,15 @@
             this.animator1 = new AnimatorNS.Animator(this.components);
             this.animator2 = new AnimatorNS.Animator(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtmin = new System.Windows.Forms.TextBox();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.ComboPU = new System.Windows.Forms.ComboBox();
-            this.txtMax = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             this.pnlLogo.SuspendLayout();
             this.pnlExit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlContainer
@@ -82,6 +82,40 @@
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(792, 364);
             this.pnlContainer.TabIndex = 26;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.animator2.SetDecoration(this.dataGridView1, AnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.dataGridView1, AnimatorNS.DecorationType.None);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 53);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 5;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(771, 267);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel1
             // 
@@ -168,6 +202,125 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtMax);
+            this.groupBox1.Controls.Add(this.ComboPU);
+            this.groupBox1.Controls.Add(this.bunifuImageButton3);
+            this.groupBox1.Controls.Add(this.txtmin);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.animator2.SetDecoration(this.groupBox1, AnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.groupBox1, AnimatorNS.DecorationType.None);
+            this.groupBox1.Font = new System.Drawing.Font("Dank Mono", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(783, 41);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtrer par : ";
+            // 
+            // txtMax
+            // 
+            this.txtMax.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.animator1.SetDecoration(this.txtMax, AnimatorNS.DecorationType.None);
+            this.animator2.SetDecoration(this.txtMax, AnimatorNS.DecorationType.None);
+            this.txtMax.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMax.Location = new System.Drawing.Point(491, 13);
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(54, 22);
+            this.txtMax.TabIndex = 4;
+            this.txtMax.Text = "Max";
+            this.txtMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMax.Visible = false;
+            // 
+            // ComboPU
+            // 
+            this.ComboPU.BackColor = System.Drawing.Color.White;
+            this.animator2.SetDecoration(this.ComboPU, AnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.ComboPU, AnimatorNS.DecorationType.None);
+            this.ComboPU.DropDownHeight = 100;
+            this.ComboPU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboPU.DropDownWidth = 170;
+            this.ComboPU.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboPU.FormattingEnabled = true;
+            this.ComboPU.IntegralHeight = false;
+            this.ComboPU.Items.AddRange(new object[] {
+            "Between",
+            "Less Than ",
+            "More Than"});
+            this.ComboPU.Location = new System.Drawing.Point(306, 13);
+            this.ComboPU.Name = "ComboPU";
+            this.ComboPU.Size = new System.Drawing.Size(113, 22);
+            this.ComboPU.TabIndex = 3;
+            this.ComboPU.Visible = false;
+            this.ComboPU.SelectedIndexChanged += new System.EventHandler(this.ComboPU_SelectedIndexChanged);
+            // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
+            this.animator2.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
+            this.bunifuImageButton3.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_Search_96px_1;
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(741, 11);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(36, 27);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton3.TabIndex = 2;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
+            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
+            // 
+            // txtmin
+            // 
+            this.txtmin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.animator1.SetDecoration(this.txtmin, AnimatorNS.DecorationType.None);
+            this.animator2.SetDecoration(this.txtmin, AnimatorNS.DecorationType.None);
+            this.txtmin.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmin.Location = new System.Drawing.Point(431, 14);
+            this.txtmin.Name = "txtmin";
+            this.txtmin.Size = new System.Drawing.Size(54, 22);
+            this.txtmin.TabIndex = 1;
+            this.txtmin.Text = "Min";
+            this.txtmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtmin.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.animator1.SetDecoration(this.textBox1, AnimatorNS.DecorationType.None);
+            this.animator2.SetDecoration(this.textBox1, AnimatorNS.DecorationType.None);
+            this.textBox1.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(551, 14);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(170, 22);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Visible = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.animator2.SetDecoration(this.comboBox1, AnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.comboBox1, AnimatorNS.DecorationType.None);
+            this.comboBox1.DropDownHeight = 100;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.DropDownWidth = 170;
+            this.comboBox1.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.IntegralHeight = false;
+            this.comboBox1.Items.AddRange(new object[] {
+            "  Tous",
+            "  Description",
+            "  Prix Achat",
+            "  Prix Vente",
+            "  Quantité"});
+            this.comboBox1.Location = new System.Drawing.Point(110, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(178, 22);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // pnlLogo
             // 
@@ -341,159 +494,6 @@
             this.bunifuElipse2.ElipseRadius = 10;
             this.bunifuElipse2.TargetControl = this;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.animator2.SetDecoration(this.comboBox1, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.comboBox1, AnimatorNS.DecorationType.None);
-            this.comboBox1.DropDownHeight = 100;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.DropDownWidth = 170;
-            this.comboBox1.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.IntegralHeight = false;
-            this.comboBox1.Items.AddRange(new object[] {
-            "  Tous",
-            "  Description",
-            "  Prix Achat",
-            "  Prix Vente",
-            "  Quantité"});
-            this.comboBox1.Location = new System.Drawing.Point(110, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 22);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.animator1.SetDecoration(this.textBox1, AnimatorNS.DecorationType.None);
-            this.animator2.SetDecoration(this.textBox1, AnimatorNS.DecorationType.None);
-            this.textBox1.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(551, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Visible = false;
-            // 
-            // txtmin
-            // 
-            this.txtmin.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.animator1.SetDecoration(this.txtmin, AnimatorNS.DecorationType.None);
-            this.animator2.SetDecoration(this.txtmin, AnimatorNS.DecorationType.None);
-            this.txtmin.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmin.Location = new System.Drawing.Point(431, 14);
-            this.txtmin.Name = "txtmin";
-            this.txtmin.Size = new System.Drawing.Size(54, 22);
-            this.txtmin.TabIndex = 1;
-            this.txtmin.Text = "Min";
-            this.txtmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtmin.Visible = false;
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.animator2.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
-            this.bunifuImageButton3.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_Search_96px_1;
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(741, 11);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(36, 27);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton3.TabIndex = 2;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
-            // 
-            // ComboPU
-            // 
-            this.ComboPU.BackColor = System.Drawing.Color.White;
-            this.animator2.SetDecoration(this.ComboPU, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.ComboPU, AnimatorNS.DecorationType.None);
-            this.ComboPU.DropDownHeight = 100;
-            this.ComboPU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboPU.DropDownWidth = 170;
-            this.ComboPU.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboPU.FormattingEnabled = true;
-            this.ComboPU.IntegralHeight = false;
-            this.ComboPU.Items.AddRange(new object[] {
-            "Between",
-            "Less Than ",
-            "More Than"});
-            this.ComboPU.Location = new System.Drawing.Point(306, 13);
-            this.ComboPU.Name = "ComboPU";
-            this.ComboPU.Size = new System.Drawing.Size(113, 22);
-            this.ComboPU.TabIndex = 3;
-            this.ComboPU.Visible = false;
-            this.ComboPU.SelectedIndexChanged += new System.EventHandler(this.ComboPU_SelectedIndexChanged);
-            // 
-            // txtMax
-            // 
-            this.txtMax.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.animator1.SetDecoration(this.txtMax, AnimatorNS.DecorationType.None);
-            this.animator2.SetDecoration(this.txtMax, AnimatorNS.DecorationType.None);
-            this.txtMax.Font = new System.Drawing.Font("Dank Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMax.Location = new System.Drawing.Point(491, 13);
-            this.txtMax.Name = "txtMax";
-            this.txtMax.Size = new System.Drawing.Size(54, 22);
-            this.txtMax.TabIndex = 4;
-            this.txtMax.Text = "Max";
-            this.txtMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtMax.Visible = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtMax);
-            this.groupBox1.Controls.Add(this.ComboPU);
-            this.groupBox1.Controls.Add(this.bunifuImageButton3);
-            this.groupBox1.Controls.Add(this.txtmin);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.animator2.SetDecoration(this.groupBox1, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.groupBox1, AnimatorNS.DecorationType.None);
-            this.groupBox1.Font = new System.Drawing.Font("Dank Mono", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(783, 41);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtrer par : ";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.animator2.SetDecoration(this.dataGridView1, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.dataGridView1, AnimatorNS.DecorationType.None);
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 5;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(771, 267);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
             // Gere_Articles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,19 +507,20 @@
             this.animator2.SetDecoration(this, AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Gere_Articles";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gere_Articles";
             this.Load += new System.EventHandler(this.Gere_Articles_Load);
             this.pnlContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             this.pnlLogo.ResumeLayout(false);
             this.pnlLogo.PerformLayout();
             this.pnlExit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

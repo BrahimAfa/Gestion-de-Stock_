@@ -1138,13 +1138,13 @@ namespace Gestion_de_Stock_.DAL
                         new SqlParameter("@numfact", ds.Tables["Facture"].Rows[0][0].ToString()),
                         new SqlParameter("@idclient", int.Parse(ds.Tables["Facture"].Rows[0][1].ToString())),
                         new SqlParameter("@datefact", DateTime.Parse( ds.Tables["Facture"].Rows[0][2].ToString())),
-                        new SqlParameter("@Montant", decimal.Parse( ds.Tables["Facture"].Rows[0][3].ToString()))
-
+                        new SqlParameter("@Montant", decimal.Parse( ds.Tables["Facture"].Rows[0][3].ToString())),
+                        new SqlParameter("@Restpaye", decimal.Parse( ds.Tables["Facture"].Rows[0][4].ToString()))
                 };
 
                 //Insert Into Facture;
                 cmd.CommandText =
-"Insert into FACTURE values (@numfact,@idclient,@datefact,@Montant)";
+"Insert into FACTURE values (@numfact,@idclient,@datefact,@Montant,@Restpaye)";
                 cmd.Parameters.AddRange(_param);
                 cmd.ExecuteNonQuery();
                 // Clearing params
@@ -1237,7 +1237,24 @@ namespace Gestion_de_Stock_.DAL
 
             return dt;
         }
-        
+        public DataTable GetDonnerFacture( string Numfatcure)
+        {
+            DataTable dt = new DataTable();
+            da = new SqlDataAdapter("select * from Facture where NumFact ='"+Numfatcure+"'", con);
+            da.Fill(dt);
+
+            return dt;
+        }
+        public DataTable GetFactureDetail(string NumFacture)
+        {
+            //select D.IdReg as [Id Reg],r.DateReg as [Date Reg] ,d.Ref as [REF Article],d.IdType as [Type Reg],d.Montant as [Montant Paye],d.DateEcheance as [Date Echeance],d.Encaisement from FACTURE f , REGLEMENT r, Detail_Reg D,TYPE_REGLEMENT t where f.NumFact = r.NumFact and r.IdReg =D.IdReg and d.IdType =t.IdType and f.NumFact = 'FACT-00001'
+            DataTable dt = new DataTable();
+            da = new SqlDataAdapter("select f.[Num Reglement],f.[Ref d'Article],f.[Montant Payé],f.[Type Reg],f.Encaisement from Fact_de_Stock f where [Num Facture] = '"+NumFacture+"'", con);
+            da.Fill(dt);
+
+            return dt;
+
+        }
     } 
 
 

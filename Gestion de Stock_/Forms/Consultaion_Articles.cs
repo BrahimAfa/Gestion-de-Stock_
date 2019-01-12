@@ -45,15 +45,24 @@ namespace Gestion_de_Stock_.Forms
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            foreach (DataGridViewRow item in dataGridView1.Rows)
+            try
             {
-                int qte = Convert.ToInt32(item.Cells[5].Value);
-                if (qte<100)
+                foreach (DataGridViewRow item in dataGridView1.Rows)
                 {
-                    item.DefaultCellStyle.BackColor = Color.FromArgb(226, 63, 63);
-                    item.DefaultCellStyle.SelectionBackColor = Color.FromArgb(233, 106, 106);
+                    int qte = Convert.ToInt32(item.Cells[5].Value);
+                    if (qte < 100)
+                    {
+                        item.DefaultCellStyle.BackColor = Color.FromArgb(226, 63, 63);
+                        item.DefaultCellStyle.SelectionBackColor = Color.FromArgb(233, 106, 106);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
           
         }
         #region Cummon Thing Betwwen the Forms
