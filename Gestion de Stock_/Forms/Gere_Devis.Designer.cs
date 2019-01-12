@@ -410,6 +410,7 @@
             this.animator2.SetDecoration(this, AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Gere_Devis";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gere_Devis";
             this.Load += new System.EventHandler(this.Gere_Devis_Load);
             this.pnlContainer.ResumeLayout(false);

@@ -16,17 +16,16 @@ namespace Gestion_de_Stock_.Forms
 {
     public partial class Gere_BL : Form
     {
-        Point _LocationPoint;
-        Size _size;
+        //Point _LocationPoint;
+        //Size _size;
         string NumBL;
         UC_LocationInForm UC = UC_LocationInForm.Instance;
 
-        public Gere_BL(Point OwnerFormLocaion, Size OwnerFormSize)
+        public Gere_BL()
         {
             InitializeComponent();
             StartTiming();
-            _LocationPoint = OwnerFormLocaion;
-            _size = OwnerFormSize;
+         
             UC_Initializ();
 
         }
@@ -35,8 +34,8 @@ namespace Gestion_de_Stock_.Forms
         private void Gere_BL_Load(object sender, EventArgs e)
         {
 
-            this.Location = _LocationPoint;
-            this.Size = _size;
+            //this.Location = _LocationPoint;
+            //this.Size = _size;
             dataGridView1.DataSource = DataAccess.GetBL();
             DGVinitialize();
         }
@@ -161,17 +160,17 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+         //   Hide_Component_WithANimation();
 
-            new HomeForm(this.Location, this.Size).Show();
+           // new HomeForm(this.Location, this.Size).Show();
             this.Close();
         }
 
         private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
-            new Ajouter_BL(this.Location, this.Size, NumBL).Show();
-            this.Hide();
+           // Hide_Component_WithANimation();
+            new Ajouter_BL( NumBL).ShowDialog();
+           // this.Hide();
         }
     }
 }

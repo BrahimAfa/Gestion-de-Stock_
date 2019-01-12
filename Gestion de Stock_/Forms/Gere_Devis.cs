@@ -15,17 +15,16 @@ namespace Gestion_de_Stock_.Forms
 {
     public partial class Gere_Devis : Form
     {
-        Point _LocationPoint;
-        Size _size;
+        //Point _LocationPoint;
+        //Size _size;
         string NumDevis;
         UC_LocationInForm UC = UC_LocationInForm.Instance;
 
-        public Gere_Devis(Point OwnerFormLocaion, Size OwnerFormSize)
+        public Gere_Devis()
         {
             InitializeComponent();
             StartTiming();
-            _LocationPoint = OwnerFormLocaion;
-            _size = OwnerFormSize;
+          
             UC_Initializ();
 
         }
@@ -34,8 +33,8 @@ namespace Gestion_de_Stock_.Forms
         private void Gere_Devis_Load(object sender, EventArgs e)
         {
 
-            this.Location = _LocationPoint;
-            this.Size = _size;
+            //this.Location = _LocationPoint;
+            //this.Size = _size;
             dataGridView1.DataSource = DataAccess.GetDevis();
             DGVinitialize();
         }
@@ -84,9 +83,12 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
-            new Ajouter_Devis(this.Location, this.Size, NumDevis).Show();
-            this.Hide();
+           var f =  new Ajouter_Devis(NumDevis);
+             //Hide_Component_WithANimation();
+
+          
+            f.ShowDialog();
+            
         }
         #region Cummon Thing Betwwen the Forms
         void StartTiming()
@@ -164,9 +166,9 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+           // Hide_Component_WithANimation();
 
-            new HomeForm(this.Location, this.Size).Show();
+            //new HomeForm(this.Location, this.Size).Show();
             this.Close();
         }
     }

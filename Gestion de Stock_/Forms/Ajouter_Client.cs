@@ -26,26 +26,17 @@ namespace Gestion_de_Stock_.Forms
         public Ajouter_Client()
         {
             InitializeComponent();
-        }
-        Point _LocationPoint;
-        Size _size;
-        DataAccess DAT;
-        UC_LocationInForm UC = UC_LocationInForm.Instance;
-        public Ajouter_Client(Point OwnerFormLocaion, Size OwnerFormSize)
-        {
-            InitializeComponent();
-            _LocationPoint = OwnerFormLocaion;
-            _size = OwnerFormSize;
             StartTiming();
             UC_Initializ();
-
         }
+        DataAccess DAT;
+        UC_LocationInForm UC = UC_LocationInForm.Instance;
+
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            this.Location = _LocationPoint;
-            this.Size = _size;
+
         }
 
     
@@ -149,8 +140,8 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuImageButton1_Click_1(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
-            (new HomeForm(this.Location, this.Size)).Show();
+          //  Hide_Component_WithANimation();
+            //(new HomeForm(this.Location, this.Size)).Show();
             this.Close();
         }
 

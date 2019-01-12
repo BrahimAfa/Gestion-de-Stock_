@@ -220,7 +220,7 @@
             this.animator1.SetDecoration(this.bunifuSeparator2, AnimatorNS.DecorationType.None);
             this.animator2.SetDecoration(this.bunifuSeparator2, AnimatorNS.DecorationType.None);
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator2.LineThickness = 14;
+            this.bunifuSeparator2.LineThickness = 21;
             this.bunifuSeparator2.Location = new System.Drawing.Point(507, 29);
             this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
@@ -235,7 +235,7 @@
             this.animator1.SetDecoration(this.bunifuSeparator1, AnimatorNS.DecorationType.None);
             this.animator2.SetDecoration(this.bunifuSeparator1, AnimatorNS.DecorationType.None);
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 14;
+            this.bunifuSeparator1.LineThickness = 21;
             this.bunifuSeparator1.Location = new System.Drawing.Point(258, 29);
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
@@ -569,6 +569,7 @@
             this.animator1.SetDecoration(this, AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ajouter_Devis";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter_Devis";
             this.Load += new System.EventHandler(this.Ajouter_Devis_Load);
             this.pnlContainer.ResumeLayout(false);

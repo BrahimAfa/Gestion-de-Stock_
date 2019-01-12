@@ -327,6 +327,7 @@
             this.animator1.SetDecoration(this, AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Modifier_Client";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifier_Client";
             this.Load += new System.EventHandler(this.Modifier_Client_Load);
             this.ResumeLayout(false);

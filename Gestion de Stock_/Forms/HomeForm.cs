@@ -18,17 +18,22 @@ namespace Gestion_de_Stock_.Forms
     public partial class HomeForm : Form
     {
         UserControls.UC_LocationInForm UC = UserControls.UC_LocationInForm.Instance;
-        public bool IsMaximized { get; set; }
+        public bool IsMaximized { get; set; } = false;
         public HomeForm()
         {
             InitializeComponent();
             StartTiming();
-            _LocationPoint = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
-            size = this.Size;
+            //_LocationPoint = getScreenCenter();
+          
         }
         Point _LocationPoint ;
         Size size;
+       private Point getScreenCenter()
+        {
+           return new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+            size = this.Size;
+        }
         public HomeForm(Point P,Size S)
         {
             InitializeComponent();
@@ -47,8 +52,10 @@ namespace Gestion_de_Stock_.Forms
         private void HomeForm_Load(object sender, EventArgs e)
         {
             IsMaximized = false;
-            this.Location = _LocationPoint;
-            this.Size = size;
+
+            //this.Location = _LocationPoint;
+            //this.Size = size;
+            MaximizeWindow();
             RadPanoramaInitializ();
             UC_Initializ();
          
@@ -199,94 +206,117 @@ namespace Gestion_de_Stock_.Forms
 
         private void AddClient_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+            ///Hide_Component_WithANimation();
           
-           new Ajouter_Client(this.Location, this.Size).Show();
-            this.Hide();
+           new Ajouter_Client().ShowDialog();
+           // this.Hide();
 
         }
 
         private void radTileElement1_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+           // Hide_Component_WithANimation();
             
-           new Ajouter_Devis(this.Location, this.Size).Show();
+           new Ajouter_Devis().ShowDialog();
 
-            this.Hide();
+           // this.Hide();
 
         }
 
         private void radTileElement2_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+           // Hide_Component_WithANimation();
            
-          new Ajouter_BL(this.Location, this.Size).Show();
-            this.Hide();
+          new Ajouter_BL().ShowDialog();
+          //  this.Hide();
            
         }
 
         private void tileConsultation_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+          //  Hide_Component_WithANimation();
 
-            new Consultaion_Articles(this.Location, this.Size).Show();
-            this.Hide();
+            new Consultaion_Articles().ShowDialog();
+           // this.Hide();
         }
 
         private void livetileArticles_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+            //Hide_Component_WithANimation();
 
-            new Gere_Articles(this.Location, this.Size).Show();
-            this.Hide();
+            new Gere_Articles().ShowDialog();
+            //this.Hide();
         }
 
         private void LivetileClient_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+           // Hide_Component_WithANimation();
 
-            new Gere_Client(this.Location, this.Size).Show();
-            this.Hide();
+            new Gere_Client().ShowDialog();
+          //  this.Hide();
         }
 
         private void LiveTileGereDevis_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+            //Hide_Component_WithANimation();
 
-            new Gere_Devis(this.Location, this.Size).Show();
-            this.Hide();
+            new Gere_Devis().ShowDialog();
+            //this.Hide();
         }
 
         private void LiveTileGereBL_Click(object sender, EventArgs e)
         {
 
-            Hide_Component_WithANimation(   );
-            new Gere_BL(this.Location,this.Size).Show();
-            this.Hide();
+         //   Hide_Component_WithANimation(   );
+            new Gere_BL().ShowDialog();
+           // this.Hide();
         }
-
+       
         private void bunifuImageButton3_Click(object sender, EventArgs e)
         {
-            if (!IsMaximized)
-            {
-                this.WindowState = FormWindowState.Maximized;
-                IsMaximized = true;
-            }
-            else
-            {
-                WindowState = FormWindowState.Normal;
-                IsMaximized = false;
-            }
-           
-            
-           
+
+            //if (!IsMaximized)
+            //{
+            //    MaximizeWindow();
+            //}
+            //else
+            //{
+            //    //WindowState = FormWindowState.Normal;
+            //    ResizableWindow();
+            //    IsMaximized = false;
+            //}
+
+            //}
+            //else
+            //{
+            //    
+            //    ResizableWindow();
+            //}
         }
+        private void MaximizeWindow()
+        {
+            var rectangle = Screen.FromControl(this).Bounds;
+            this.FormBorderStyle = FormBorderStyle.None;
+            Size = new Size(rectangle.Width, rectangle.Height);
+            Location = new Point(0, 0);
+            Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
+            this.Size = new Size(workingRectangle.Width, workingRectangle.Height);
+        }
+
+        //private void ResizableWindow()
+        //{
+        //   // this.ControlBox = false;
+        //    this.Size = new Size(832, 491);
+        //    this.Location = getScreenCenter();
+            
+        //    //this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+        //}
 
         private void radTileDevisRaport_Click(object sender, EventArgs e)
         { 
-            Hide_Component_WithANimation();
-            new Devis_Report(this.Location, this.Size).Show();
-            this.Hide();
+          //  Hide_Component_WithANimation();
+            new Devis_Report().ShowDialog();
+          //  this.Hide();
         }
 
         private void radTileElement10_Click(object sender, EventArgs e)

@@ -15,18 +15,17 @@ namespace Gestion_de_Stock_.Forms
 {
     public partial class Gere_Client : Form
     {
+        //Point _LocationPoint;
+        //Size size;
         DataView dv = new DataView();
         DataAccess DA = new DataAccess();
-        Point _LocationPoint;
-        Size size;
         int RowIndex;
         UC_LocationInForm UC = UC_LocationInForm.Instance;
-        public Gere_Client(Point OwnerFormLocaion, Size OwnerFormSize)
+        public Gere_Client()
         {
 
             InitializeComponent();
-            _LocationPoint = OwnerFormLocaion;
-            size = OwnerFormSize;
+          
             StartTiming();
             UC_Initializ();
         }
@@ -45,8 +44,8 @@ namespace Gestion_de_Stock_.Forms
         private void Gere_Client_Load(object sender, EventArgs e)
         {
            
-            this.Location = _LocationPoint;
-            this.Size = size;
+            //this.Location = _LocationPoint;
+            //this.Size = size;
             dataGridView1.DataSource = DataAccess.GetClient();
             DGVinitialize();
         }
@@ -179,9 +178,9 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+          //  Hide_Component_WithANimation();
 
-            new HomeForm(this.Location, this.Size).Show();
+          //  new HomeForm(this.Location, this.Size).Show();
             this.Close();
         }
     }

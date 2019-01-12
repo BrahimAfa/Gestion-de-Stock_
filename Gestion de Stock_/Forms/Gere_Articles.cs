@@ -23,7 +23,7 @@ namespace Gestion_de_Stock_.Forms
 
         UC_LocationInForm UC = UC_LocationInForm.Instance;
 
-        public Gere_Articles(Point OwnerFormLocaion, Size OwnerFormSize)
+        public Gere_Articles()
         {
             InitializeComponent();
 
@@ -376,9 +376,9 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+           // Hide_Component_WithANimation();
 
-            new HomeForm(this.Location, this.Size).Show();
+          //  new HomeForm(this.Location, this.Size).Show();
             this.Close();
         }
     }

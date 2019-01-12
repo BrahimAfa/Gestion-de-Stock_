@@ -13,14 +13,14 @@ namespace Gestion_de_Stock_.Forms
 {
     public partial class Consultaion_Articles : Form
     {
-        Point _LocationPoint;
-        Size _size;
-        public Consultaion_Articles(Point OwnerFormLocaion,Size OwnerFormSize)
+        //Point _LocationPoint;
+        //Size _size;
+        public Consultaion_Articles()
         {
             InitializeComponent();
             StartTiming();
-            _LocationPoint = OwnerFormLocaion;
-            _size = OwnerFormSize;
+            //_LocationPoint = OwnerFormLocaion;
+            //_size = OwnerFormSize;
             dataGridView1.DataSource = DAL.DataAccess.GetArticles();
 
             UC_Initializ();
@@ -31,8 +31,8 @@ namespace Gestion_de_Stock_.Forms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            this.Location = _LocationPoint;
-            this.Size = _size;
+            //this.Location = _LocationPoint;
+            //this.Size = _size;
             dataGridView1.Columns[1].HeaderText = "ID Famille";
             dataGridView1.Columns[2].Width = 300;
             dataGridView1.Columns[3].HeaderText = "Prix Achat";
@@ -139,9 +139,9 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+           // Hide_Component_WithANimation();
 
-            new HomeForm(this.Location, this.Size).Show();
+           // new HomeForm(this.Location, this.Size).Show();
             this.Close();
         }
     }

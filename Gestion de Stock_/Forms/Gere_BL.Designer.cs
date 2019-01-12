@@ -409,6 +409,7 @@
             this.animator2.SetDecoration(this, AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Gere_BL";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gere_BL";
             this.Load += new System.EventHandler(this.Gere_BL_Load);
             this.pnlContainer.ResumeLayout(false);

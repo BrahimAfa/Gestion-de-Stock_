@@ -444,6 +444,7 @@
             this.animator2.SetDecoration(this, AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ajouter_Client";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter_Client";
             this.pnlContainer.ResumeLayout(false);
             this.pnlContainer.PerformLayout();

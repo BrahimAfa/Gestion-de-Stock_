@@ -15,15 +15,15 @@ namespace Gestion_de_Stock_.Forms
 {
     public partial class Devis_Report : Form
     {
-        Point _LocationPoint;
-        Size _size;
+        //Point _LocationPoint;
+        //Size _size;
    
         UserControls.UC_LocationInForm UC = UserControls.UC_LocationInForm.Instance;
-        public Devis_Report(Point OwnerFormLocaion,Size OwnerFormSize)
+        public Devis_Report()
         {
             InitializeComponent();
-            _LocationPoint = OwnerFormLocaion;
-            _size = OwnerFormSize;
+            //_LocationPoint = OwnerFormLocaion;
+            //_size = OwnerFormSize;
 
             StartTiming();
             UC_Initializ("Devis Report");
@@ -65,8 +65,8 @@ namespace Gestion_de_Stock_.Forms
 
         private void Devis_Report_Load(object sender, EventArgs e)
         {
-            this.Location = _LocationPoint;
-            this.Size = _size;
+            //this.Location = _LocationPoint;
+            //this.Size = _size;
         }
         #region Cummon Thing Betwwen the Forms
 
@@ -142,9 +142,9 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+            //Hide_Component_WithANimation();
 
-            new HomeForm(this.Location, this.Size).Show();
+            //new HomeForm(this.Location, this.Size).Show();
             this.Close();
         }
     }

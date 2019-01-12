@@ -15,18 +15,18 @@ namespace Gestion_de_Stock_.Forms
 {
     public partial class Ajouter_BL : Form
     {
-        Point _LocationPoint;
-        Size _size;
+        //Point _LocationPoint;
+        //Size _size;
         DataAccess DA = new DataAccess();
         UserControls.UC_LocationInForm UC = UserControls.UC_LocationInForm.Instance;
         private string _Ref { get; set; }
         // Main Constructor SECTION
-        public Ajouter_BL(Point OwnerFormLocaion, Size OwnerFormSize)
+        public Ajouter_BL()
         {
             InitializeComponent();
 
-            _LocationPoint = OwnerFormLocaion;
-            _size = OwnerFormSize;
+            //_LocationPoint = OwnerFormLocaion;
+            //_size = OwnerFormSize;
 
             StartTiming();
             UC_Initializ("Bon Livraison");
@@ -64,21 +64,21 @@ namespace Gestion_de_Stock_.Forms
         }
         private void bunifuImageButton1_Ajouter_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+           // Hide_Component_WithANimation();
 
-            new HomeForm(this.Location, this.Size).Show();
+           // new HomeForm(this.Location, this.Size).Show();
             this.Close();
         }
         //EDITING SECTION
-
-        public Ajouter_BL(Point OwnerFormLocaion, Size OwnerFormSize,string NumBL)
+       // Point OwnerFormLocaion, Size OwnerFormSize,
+        public Ajouter_BL(string NumBL)
         {
             InitializeComponent();
           
             InitializeFFE(NumBL);
 
-            _LocationPoint = OwnerFormLocaion;
-            _size = OwnerFormSize;
+            //_LocationPoint = OwnerFormLocaion;
+            //_size = OwnerFormSize;
             StartTiming();
             UC_Initializ("Edit BL");
 
@@ -87,9 +87,9 @@ namespace Gestion_de_Stock_.Forms
 
         private void BunifuImageButton1_Modifier_Click(object sender, EventArgs e)
         {
-              Hide_Component_WithANimation();
+            //  Hide_Component_WithANimation();
 
-            new Gere_BL(this.Location, this.Size).Show();
+            ///new Gere_BL().Show();
             this.Close();
         }
 
@@ -174,8 +174,8 @@ namespace Gestion_de_Stock_.Forms
             this.Ref.DataSource = DAL.DataAccess.GetArticles();
             this.Ref.DisplayMember = "DESCRIPTION";
             this.Ref.ValueMember = "REF";
-            this.Location = _LocationPoint;
-            this.Size = _size;
+            //this.Location = _LocationPoint;
+            //this.Size = _size;
 
             //try
             //{

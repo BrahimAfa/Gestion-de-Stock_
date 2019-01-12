@@ -17,15 +17,15 @@ namespace Gestion_de_Stock_.Forms
 
     public partial class Ajouter_Devis : Form
     {
-        Point _LocationPoint;
-        Size _size;
+        //Point _LocationPoint;
+        //Size _size;
         DataAccess DA = new DataAccess();
         //DataSet DEVIS_EDIT;
         UserControls.UC_LocationInForm UC = UserControls.UC_LocationInForm.Instance;
         ComponentResourceManager resources = new ComponentResourceManager();
         private string _Ref { get; set; }
 
-        public Ajouter_Devis(Point OwnerFormLocaion, Size OwnerFormSize)
+        public Ajouter_Devis()
         {
             InitializeComponent();
             this.Ref.DataSource = DAL.DataAccess.GetArticles();
@@ -33,8 +33,8 @@ namespace Gestion_de_Stock_.Forms
             this.Ref.ValueMember = "REF";
             txtNumdevis.Text = DataAccess.GeneratNums();
           
-            _LocationPoint = OwnerFormLocaion;
-            _size = OwnerFormSize;
+            //_LocationPoint = OwnerFormLocaion;
+            //_size = OwnerFormSize;
             
             StartTiming();
             UC_Initializ("Devis");
@@ -75,13 +75,12 @@ namespace Gestion_de_Stock_.Forms
 
         }
 
-       public Ajouter_Devis(Point OwnerFormLocaion, Size OwnerFormSize,string NumDevis)
+       public Ajouter_Devis(string NumDevis)
         {
             InitializeComponent();
         
             InitializeFFE(NumDevis);
-            _LocationPoint = OwnerFormLocaion;
-            _size = OwnerFormSize;
+         
             StartTiming();
             UC_Initializ("Edit Devis");
 
@@ -167,8 +166,8 @@ namespace Gestion_de_Stock_.Forms
             this.Ref.DataSource = DAL.DataAccess.GetArticles();
             this.Ref.DisplayMember = "DESCRIPTION";
             this.Ref.ValueMember = "REF";
-            this.Location = _LocationPoint;
-            this.Size = _size;
+            //this.Location = _LocationPoint;
+            //this.Size = _size;
 
             try
             {
@@ -475,18 +474,23 @@ namespace Gestion_de_Stock_.Forms
 
         private void bunifuImageButton1_Ajouter_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+           // Hide_Component_WithANimation();
 
-            new HomeForm(this.Location, this.Size).Show();
+          //  new HomeForm(this.Location, this.Size).Show();
             this.Close();
         }
 
         private void BunifuImageButton1_Modifier_Click(object sender, EventArgs e)
         {
-            Hide_Component_WithANimation();
+          //  var f  = new Gere_Devis();
+          /////  Hide_Component_WithANimation();
 
-            new Gere_Devis(this.Location,this.Size).Show();
+          //  f.Parent = this.Parent;
+          //  f.ShowDialog();
+          //  f.BringToFront();
+
             this.Close();
+            //this.Parent.Show();
         }
      
     }

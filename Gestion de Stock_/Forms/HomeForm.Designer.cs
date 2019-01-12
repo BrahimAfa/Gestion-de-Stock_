@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            AnimatorNS.Animation animation10 = new AnimatorNS.Animation();
-            AnimatorNS.Animation animation9 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation2 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlExit = new System.Windows.Forms.Panel();
@@ -54,6 +54,9 @@
             this.AddClient = new Telerik.WinControls.UI.RadTileElement();
             this.ConsultClient = new Telerik.WinControls.UI.RadTileElement();
             this.LivetileClient = new Telerik.WinControls.UI.RadLiveTileElement();
+            this.tileGroupElement1 = new Telerik.WinControls.UI.TileGroupElement();
+            this.radTileElement10 = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileElement11 = new Telerik.WinControls.UI.RadTileElement();
             this.gestionAvancee = new Telerik.WinControls.UI.TileGroupElement();
             this.LiveTileGereBL = new Telerik.WinControls.UI.RadLiveTileElement();
             this.LiveTileGereFamilles = new Telerik.WinControls.UI.RadLiveTileElement();
@@ -66,7 +69,6 @@
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.animator1 = new AnimatorNS.Animator(this.components);
             this.animator2 = new AnimatorNS.Animator(this.components);
-            this.tileGroupElement1 = new Telerik.WinControls.UI.TileGroupElement();
             this.tileGroupElement2 = new Telerik.WinControls.UI.TileGroupElement();
             this.radLiveTileElement1 = new Telerik.WinControls.UI.RadLiveTileElement();
             this.radLiveTileElement2 = new Telerik.WinControls.UI.RadLiveTileElement();
@@ -85,8 +87,6 @@
             this.radLiveTileElement9 = new Telerik.WinControls.UI.RadLiveTileElement();
             this.radTileElement8 = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement9 = new Telerik.WinControls.UI.RadTileElement();
-            this.radTileElement10 = new Telerik.WinControls.UI.RadTileElement();
-            this.radTileElement11 = new Telerik.WinControls.UI.RadTileElement();
             this.pnlExit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -411,6 +411,30 @@
             this.LivetileClient.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.LivetileClient.Click += new System.EventHandler(this.LivetileClient_Click);
             // 
+            // tileGroupElement1
+            // 
+            this.tileGroupElement1.CellSize = new System.Drawing.Size(150, 150);
+            this.tileGroupElement1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radTileElement10,
+            this.radTileElement11});
+            this.tileGroupElement1.Name = "tileGroupElement1";
+            this.tileGroupElement1.RowsCount = 2;
+            this.tileGroupElement1.Text = "Facture et Reglement";
+            // 
+            // radTileElement10
+            // 
+            this.radTileElement10.Name = "radTileElement10";
+            this.radTileElement10.Text = "Facture Reglement";
+            this.radTileElement10.TextWrap = true;
+            this.radTileElement10.Click += new System.EventHandler(this.radTileElement10_Click);
+            // 
+            // radTileElement11
+            // 
+            this.radTileElement11.Column = 1;
+            this.radTileElement11.Name = "radTileElement11";
+            this.radTileElement11.Text = "Consultation";
+            this.radTileElement11.Click += new System.EventHandler(this.radTileElement11_Click);
+            // 
             // gestionAvancee
             // 
             this.gestionAvancee.CellSize = new System.Drawing.Size(150, 150);
@@ -524,55 +548,45 @@
             // 
             this.animator1.AnimationType = AnimatorNS.AnimationType.Transparent;
             this.animator1.Cursor = null;
-            animation10.AnimateOnlyDifferences = true;
-            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
-            animation10.LeafCoeff = 0F;
-            animation10.MaxTime = 1F;
-            animation10.MinTime = 0F;
-            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
-            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
-            animation10.MosaicSize = 0;
-            animation10.Padding = new System.Windows.Forms.Padding(0);
-            animation10.RotateCoeff = 0F;
-            animation10.RotateLimit = 0F;
-            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
-            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
-            animation10.TimeCoeff = 0F;
-            animation10.TransparencyCoeff = 1F;
-            this.animator1.DefaultAnimation = animation10;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
+            this.animator1.DefaultAnimation = animation2;
             this.animator1.Interval = 8;
             // 
             // animator2
             // 
             this.animator2.AnimationType = AnimatorNS.AnimationType.VertSlide;
             this.animator2.Cursor = null;
-            animation9.AnimateOnlyDifferences = true;
-            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
-            animation9.LeafCoeff = 0F;
-            animation9.MaxTime = 1F;
-            animation9.MinTime = 0F;
-            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
-            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
-            animation9.MosaicSize = 0;
-            animation9.Padding = new System.Windows.Forms.Padding(0);
-            animation9.RotateCoeff = 0F;
-            animation9.RotateLimit = 0F;
-            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
-            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
-            animation9.TimeCoeff = 0F;
-            animation9.TransparencyCoeff = 0F;
-            this.animator2.DefaultAnimation = animation9;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.animator2.DefaultAnimation = animation1;
             this.animator2.Interval = 15;
-            // 
-            // tileGroupElement1
-            // 
-            this.tileGroupElement1.CellSize = new System.Drawing.Size(150, 150);
-            this.tileGroupElement1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radTileElement10,
-            this.radTileElement11});
-            this.tileGroupElement1.Name = "tileGroupElement1";
-            this.tileGroupElement1.RowsCount = 2;
-            this.tileGroupElement1.Text = "Facture et Reglement";
             // 
             // tileGroupElement2
             // 
@@ -856,20 +870,6 @@
             this.radTileElement9.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.radTileElement9.TextWrap = true;
             // 
-            // radTileElement10
-            // 
-            this.radTileElement10.Name = "radTileElement10";
-            this.radTileElement10.Text = "Facture Reglement";
-            this.radTileElement10.TextWrap = true;
-            this.radTileElement10.Click += new System.EventHandler(this.radTileElement10_Click);
-            // 
-            // radTileElement11
-            // 
-            this.radTileElement11.Column = 1;
-            this.radTileElement11.Name = "radTileElement11";
-            this.radTileElement11.Text = "Consultation";
-            this.radTileElement11.Click += new System.EventHandler(this.radTileElement11_Click);
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -886,7 +886,6 @@
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.pnlExit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
