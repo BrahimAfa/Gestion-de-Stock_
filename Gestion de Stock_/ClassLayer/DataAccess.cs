@@ -1341,10 +1341,18 @@ namespace Gestion_de_Stock_.DAL
 
             return dt;
         }
-        public DataTable GetDonnerFacture( string Numfatcure)
+        public DataTable GetDonnerFacture(string Numfatcure)
         {
             DataTable dt = new DataTable();
             da = new SqlDataAdapter("select * from Facture where NumFact ='"+Numfatcure+"'", con);
+            da.Fill(dt);
+
+            return dt;
+        }
+        public DataTable GetDonnerFacture(int Idclient)
+        {
+            DataTable dt = new DataTable();
+            da = new SqlDataAdapter("select * from Facture where IdClient ='" + Idclient + "'", con);
             da.Fill(dt);
 
             return dt;
@@ -1353,12 +1361,21 @@ namespace Gestion_de_Stock_.DAL
         {
             //select D.IdReg as [Id Reg],r.DateReg as [Date Reg] ,d.Ref as [REF Article],d.IdType as [Type Reg],d.Montant as [Montant Paye],d.DateEcheance as [Date Echeance],d.Encaisement from FACTURE f , REGLEMENT r, Detail_Reg D,TYPE_REGLEMENT t where f.NumFact = r.NumFact and r.IdReg =D.IdReg and d.IdType =t.IdType and f.NumFact = 'FACT-00001'
             DataTable dt = new DataTable();
-            da = new SqlDataAdapter("select f.[Num Reglement],f.[Ref d'Article],f.[Montant Payé],f.[Type Reg],f.Encaisement from Fact_de_Stock f where [Num Facture] = '"+NumFacture+"'", con);
+            da = new SqlDataAdapter("select f.[Num Reglement],f.[Ref d'Article],f.[Montant Payé],f.[Type Reg], f.[Date Echéance],f.Encaisement from Fact_de_Stock f where [Num Facture] = '" + NumFacture+"'", con);
             da.Fill(dt);
 
             return dt;
 
         }
+        public DataTable GetClientReg()
+        {
+            DataTable dt = new DataTable();
+            da = new SqlDataAdapter("select * from Reglement_Client", con);
+            da.Fill(dt);
+
+            return dt;
+        }
+        
     } 
 
 

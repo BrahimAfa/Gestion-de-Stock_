@@ -87,7 +87,7 @@ namespace Gestion_de_Stock_.Forms
         {
             
 
-            UC.LabelText = "Devis";
+            UC.LabelText = "Client";
 
             UC.Allignment = ContentAlignment.MiddleLeft;
             UC.Location = new Point(0, 72);

@@ -329,5 +329,10 @@ namespace Gestion_de_Stock_.Forms
         {
             new Facture_Cherch_Form().ShowDialog();
         }
+
+        private void ConsultClient_Click(object sender, EventArgs e)
+        {
+            new Client_Consultation().ShowDialog();
+        }
     }
 }
