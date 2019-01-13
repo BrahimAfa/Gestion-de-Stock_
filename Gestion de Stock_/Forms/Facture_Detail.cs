@@ -37,5 +37,10 @@ namespace Gestion_de_Stock_.Forms
         {
             this.Close();
         }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            new Reglement_Form(txtNumFact.Text).ShowDialog();
+        }
     }
 }

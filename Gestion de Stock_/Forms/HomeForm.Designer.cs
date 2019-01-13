@@ -423,6 +423,7 @@
             // 
             // radTileElement10
             // 
+            this.radTileElement10.ColSpan = 2;
             this.radTileElement10.Name = "radTileElement10";
             this.radTileElement10.Text = "Facture Reglement";
             this.radTileElement10.TextWrap = true;
@@ -430,8 +431,9 @@
             // 
             // radTileElement11
             // 
-            this.radTileElement11.Column = 1;
+            this.radTileElement11.ColSpan = 2;
             this.radTileElement11.Name = "radTileElement11";
+            this.radTileElement11.Row = 1;
             this.radTileElement11.Text = "Consultation";
             this.radTileElement11.Click += new System.EventHandler(this.radTileElement11_Click);
             // 

@@ -1228,7 +1228,111 @@ namespace Gestion_de_Stock_.DAL
             }
 
         }
+        public void EditFacture(DataSet ds)
+        {
+            //@numfact,@idclient,@datefact,@Montant
+            open();
+            SqlTransaction trans = con.BeginTransaction();
+            cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.Transaction = trans;
+            //   Facture Reg Detail_Reg
+            try
+            {
+                SqlParameter[] _param =
+                 {
 
+                        new SqlParameter("@numfact", ds.Tables["Facture"].Rows[0][0].ToString()),
+        
+                        new SqlParameter("@Restpaye", decimal.Parse( ds.Tables["Facture"].Rows[0][4].ToString()))
+                };
+
+                //Insert Into Facture;
+                cmd.CommandText =
+"Update FACTURE set Rest_Paye = @Restpaye where NumFact =  @numfact";
+                cmd.Parameters.AddRange(_param);
+                cmd.ExecuteNonQuery();
+                // Clearing params
+                cmd.Parameters.Clear();
+
+                //add new params;
+                //add Reglement
+                SqlParameter[] _param2 =
+                {
+
+                new SqlParameter("@numreg", ds.Tables["Reg"].Rows[0][0].ToString()),
+                new SqlParameter("@datereg", DateTime.Parse(ds.Tables["Reg"].Rows[0][1].ToString())),
+                new SqlParameter("@numfact", ds.Tables["Reg"].Rows[0][2].ToString())
+
+
+                };
+
+
+                cmd.CommandText = "Insert into REGLEMENT values (@numreg,@datereg,@numfact)";
+                cmd.Parameters.AddRange(_param2);
+                cmd.ExecuteNonQuery();
+
+
+
+
+
+                //clearing params to add new ones.
+
+                //secondly adding  "Detail Devis" wuth his params.
+
+
+                foreach (DataRow item in ds.Tables["Detail_Reg"].Rows)
+                {
+                    cmd.Parameters.Clear();
+                    SqlParameter[] _params = new SqlParameter[]
+                        {
+                          //  
+                            new SqlParameter("@IdReg",item[0].ToString()),
+                            new SqlParameter("@Idtype",int.Parse(item[1].ToString())),
+                            new SqlParameter("@Montant",Convert.ToDecimal(item[2])),
+                            new SqlParameter("@Ref",item[3].ToString()),
+                            new SqlParameter("@DateEch",Convert.ToDateTime(item[4])),
+                            new SqlParameter("@Encais",Convert.ToBoolean(item[5]))
+                        };
+                    cmd.CommandText =
+       "Insert into Detail_Reg Values (@IdReg,@Idtype,@Montant,@Ref,@DateEch,@Encais)";
+                    cmd.Parameters.AddRange(_params);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+
+
+
+                trans.Commit();
+
+                IsDone = true; // if you asking whats done the adding Fonction is the one is done
+
+            }
+            catch (Exception ex)
+            {
+                // the main problem that caused the problem
+                IsDone = false;
+                MessageBox.Show(ex.Message);
+                try
+                {
+                    //attempting to rollback and if there is a problem we show it
+                    MessageBox.Show("entered to rollback");
+                    trans.Rollback();
+                }
+                catch (Exception ex1)
+                {
+
+                    MessageBox.Show(ex1.Message);
+                }
+
+            }
+            finally
+            {
+                close();
+            }
+
+        }
         public DataTable GetDonnerFacture()
         {
             DataTable dt = new DataTable();

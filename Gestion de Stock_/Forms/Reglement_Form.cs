@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,14 +17,68 @@ namespace Gestion_de_Stock_.Forms
 {
     public partial class Reglement_Form : Form
     {
+        DataAccess da;
         UC_LocationInForm UC = UC_LocationInForm.Instance;
-
+        DataSet ds;
         public Reglement_Form()
         {
             InitializeComponent();
 
             StartTiming();
-            UC_Initializ();
+            UC_Initializ("Reglement");
+            EditeState = false;
+            SetupComponents();
+        }
+        public Reglement_Form(string NumFacture)
+        {
+            InitializeComponent();
+
+            StartTiming();
+            UC_Initializ("Edit Reglement");
+            EditeState = true;
+            SetupComponents();
+            InitializeDataset(NumFacture);
+            FillControlersWithData();
+           
+        }
+
+        private void InitializeDataset(string NumFacture)
+        {
+            try
+            {
+                da = new DataAccess();
+                ds = new DataSet();
+                ds.Tables.Add(da.GetDonnerFacture(NumFacture));
+                ds.Tables.Add(da.GetFactureDetail(NumFacture));
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+          
+        }
+        private void FillControlersWithData()
+        {
+            //facture Table
+           // SetupComponents();
+            txtNumFact.Text = ds.Tables[0].Rows[0][0].ToString();
+
+            comboBoxClient.SelectedValue = ds.Tables[0].Rows[0][1].ToString();
+
+            lblMontant.Text = ds.Tables[0].Rows[0][3].ToString();
+
+            lblAncienRestPayer.Text = ds.Tables[0].Rows[0][4].ToString();
+
+            lblAncienTotalReg.Text = (Convert.ToDecimal(lblMontant.Text)- Convert.ToDecimal(lblAncienRestPayer.Text)).ToString();
+
+            // reglement
+    
+            comboBoxArticle.SelectedValue = ds.Tables[1].Rows[0][1].ToString();
+            IsArticleChosen = true;
+           // MessageBox.Show(ds.Tables[1].Rows[0][1].ToString());
+            comboBoxClient.Enabled = false;
+            comboBoxArticle.Enabled = false;
         }
 
         public bool EcheanceState { get; set; }
@@ -32,22 +87,27 @@ namespace Gestion_de_Stock_.Forms
         private void Reglement_Form_Load(object sender, EventArgs e)
         {
 
-            SetupComponents();
+          
         }
-
+        bool EditeState;
         void SetupComponents()
         {
             //client - type - Article
             //texts
-            txtNumFact.Text = DataAccess.GeneratFactureID();
+            DataTable DT = DataAccess.GetArticles();
+            if (!EditeState)
+            {
+                txtNumFact.Text = DataAccess.GeneratFactureID();
+                DataRow dr = DT.NewRow();
+                dr[0] = "-1";
+                dr[2] = "Selctionner L'article";
+                DT.Rows.InsertAt(dr, 0);
+            }
             lblNumReg.Text = DataAccess.GeneratReglementsID();
             //Comboboxes
             //Articles
-            DataTable DT = DataAccess.GetArticles();
-            DataRow dr = DT.NewRow();
-            dr[0] = "-1";
-            dr[2] = "Selctionner L'article";
-            DT.Rows.InsertAt(dr, 0);
+            
+       
             comboBoxArticle.DataSource = DT;
             comboBoxArticle.DisplayMember = "DESCRIPTION";
             comboBoxArticle.ValueMember = "REF";
@@ -134,6 +194,7 @@ namespace Gestion_de_Stock_.Forms
             {
                 sum += Convert.ToDecimal(dr.Cells[1].Value);
             }
+            sum = Convert.ToDecimal(lblAncienTotalReg.Text) + sum; 
             lblTotalReg.Text = sum.ToString("0.00");
             lblRestPayer.Text = (Decimal.Parse(lblMontant.Text) - sum).ToString();
         }
@@ -191,7 +252,15 @@ namespace Gestion_de_Stock_.Forms
                 MessageBox.Show("Pas des données saisir !!!");
                 return;
             }
-            DA.AddFacture(RemplirDataset());
+            if (!EditeState)
+            {
+                DA.AddFacture(RemplirDataset());
+            }
+            else
+            {
+                DA.EditFacture(RemplirDataset());
+            }
+           
             if (DA.IsDone)
             {
                 MessageBox.Show("Bien AJouter");
@@ -228,11 +297,11 @@ namespace Gestion_de_Stock_.Forms
 
         }
 
-        void UC_Initializ()
+        void UC_Initializ(string State)
         {
 
 
-            UC.LabelText = "Reglement";
+            UC.LabelText = State;
 
             UC.Allignment = ContentAlignment.MiddleLeft;
             UC.Location = new Point(0, 72);
