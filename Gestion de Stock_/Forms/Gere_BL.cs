@@ -30,7 +30,7 @@ namespace Gestion_de_Stock_.Forms
 
         }
 
-
+        
         private void Gere_BL_Load(object sender, EventArgs e)
         {
 
@@ -171,6 +171,29 @@ namespace Gestion_de_Stock_.Forms
            // Hide_Component_WithANimation();
             new Ajouter_BL( NumBL).ShowDialog();
            // this.Hide();
+        }
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
+
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("le champe est Vide Entrer Num bon de Livraison");
+                return;
+            }
+            
+            else if (textBox1.Text.Length < 10)
+            {
+                MessageBox.Show("Num de BL est Incorecte !!!");
+                return;
+            }
+            DataTable dt = DataAccess.GetBL(textBox1.Text);
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Cette Num Pas Existe !");
+                return;
+            }
+            dataGridView1.DataSource = dt;
         }
     }
 }

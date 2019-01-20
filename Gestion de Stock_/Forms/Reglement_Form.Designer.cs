@@ -533,7 +533,7 @@
             this.comboBoxArticle.FormattingEnabled = true;
             this.comboBoxArticle.Location = new System.Drawing.Point(67, 67);
             this.comboBoxArticle.Name = "comboBoxArticle";
-            this.comboBoxArticle.Size = new System.Drawing.Size(354, 25);
+            this.comboBoxArticle.Size = new System.Drawing.Size(343, 25);
             this.comboBoxArticle.TabIndex = 42;
             this.comboBoxArticle.SelectionChangeCommitted += new System.EventHandler(this.comboBoxArticle_SelectionChangeCommitted);
             // 

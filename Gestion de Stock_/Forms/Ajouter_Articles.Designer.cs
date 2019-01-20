@@ -429,7 +429,7 @@
             this.txtPrixAchat.Size = new System.Drawing.Size(166, 23);
             this.txtPrixAchat.TabIndex = 26;
             this.txtPrixAchat.Text = "0";
-            this.txtPrixAchat.TextChanged += new System.EventHandler(this.txtPrixAchat_TextChanged);
+            this.txtPrixAchat.TextChanged += new System.EventHandler(this.txtPrixVente_TextChanged);
             this.txtPrixAchat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixAchat_KeyPress);
             // 
             // label5

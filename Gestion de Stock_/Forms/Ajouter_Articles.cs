@@ -39,7 +39,7 @@ namespace Gestion_de_Stock_.Forms
             
             
            // var UC = UserControls.UC_LocationInForm.Instance;
-            UC.LabelText = "Articles";
+            UC.LabelText = "Ajouter Article";
 
             UC.Allignment = ContentAlignment.MiddleLeft;
             UC.Location = new Point(0, 72);
@@ -212,7 +212,21 @@ namespace Gestion_de_Stock_.Forms
 
         private void txtPrixAchat_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != (char)Keys.Delete ;
+            //e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != (char)Keys.Delete;
+            if (!char.IsControl(e.KeyChar)
+       && !char.IsDigit(e.KeyChar)
+       && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == ','
+                && (sender as TextBox).Text.IndexOf(',') > -1)
+            {
+                e.Handled = true;
+            }
+
         }
 
         private void txtTVA_TextChanged(object sender, EventArgs e)
@@ -240,9 +254,13 @@ namespace Gestion_de_Stock_.Forms
 
         private void txtPrixVente_TextChanged(object sender, EventArgs e)
         {
-        
+            if ((sender as TextBox).Text.StartsWith(","))
+            {
+                return;
+            }
             if (!String.IsNullOrEmpty(txtPrixAchat.Text) && !String.IsNullOrEmpty(txtPrixVente.Text))
             {
+           
                 decimal vent = Convert.ToDecimal(txtPrixVente.Text);
                 decimal achat = Convert.ToDecimal(txtPrixAchat.Text);
                 txtMarge.Text = (vent - achat).ToString();

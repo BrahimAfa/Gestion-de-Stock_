@@ -26,21 +26,16 @@ namespace Gestion_de_Stock_.Forms
             //_LocationPoint = getScreenCenter();
           
         }
-        Point _LocationPoint ;
-        Size size;
-       private Point getScreenCenter()
-        {
-           return new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
-            size = this.Size;
-        }
-        public HomeForm(Point P,Size S)
-        {
-            InitializeComponent();
-            StartTiming();
-            _LocationPoint = P;
-            size = S;
-        }
+        //Point _LocationPoint ;
+        //Size size;
+  
+        //public HomeForm(Point P,Size S)
+        //{
+        //    InitializeComponent();
+        //    StartTiming();
+        //    _LocationPoint = P;
+        //    size = S;
+        //}
       //  DataAccess DAT;
       private void RadPanoramaInitializ()
         {
@@ -97,11 +92,6 @@ namespace Gestion_de_Stock_.Forms
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-
-
-
-
 
         #region Fonctions
 
@@ -333,6 +323,16 @@ namespace Gestion_de_Stock_.Forms
         private void ConsultClient_Click(object sender, EventArgs e)
         {
             new Client_Consultation().ShowDialog();
+        }
+
+        private void radTileBLRaport_Click(object sender, EventArgs e)
+        {
+            new BL_Report().ShowDialog();
+        }
+
+        private void LiveTileGereFamilles_Click(object sender, EventArgs e)
+        {
+            new Gere_Famill().ShowDialog();
         }
     }
 }

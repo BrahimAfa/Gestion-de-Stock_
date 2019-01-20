@@ -25,7 +25,7 @@ namespace Gestion_de_Stock_.Forms
             InitializeComponent();
 
             StartTiming();
-            UC_Initializ("Reglement");
+            UC_Initializ("Reg et Fact");
             EditeState = false;
             SetupComponents();
         }
@@ -34,7 +34,7 @@ namespace Gestion_de_Stock_.Forms
             InitializeComponent();
 
             StartTiming();
-            UC_Initializ("Edit Reglement");
+            UC_Initializ("Edit Reg et Fact");
             EditeState = true;
             SetupComponents();
             InitializeDataset(NumFacture);
@@ -153,7 +153,7 @@ namespace Gestion_de_Stock_.Forms
 
             datetimepickerECH.Enabled = EcheanceState = comboBoxType.SelectedValue.ToString() == "1" ? false : true;
 
-
+           
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)

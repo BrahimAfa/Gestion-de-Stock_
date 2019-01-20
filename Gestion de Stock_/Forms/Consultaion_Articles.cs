@@ -144,5 +144,48 @@ namespace Gestion_de_Stock_.Forms
            // new HomeForm(this.Location, this.Size).Show();
             this.Close();
         }
+        int Index;
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Index = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+            // MessageBox.Show(Index.ToString());
+
+            if (Index >= 0)
+            {
+
+                if (e.Button == MouseButtons.Right)
+                {
+                    dataGridView1.Rows[Index].Selected = true;
+                    ContextMenuStrip CM = new ContextMenuStrip();
+
+                    CM.Items.Add("Modifier").Click += ModifierDgv_Click;
+                    CM.Show(dataGridView1, e.Location);
+
+
+                }
+            }
+        }
+        private void ModifierDgv_Click(object sender, EventArgs e)
+        {
+            //    MessageBox.Show("detaill CLICKED ");
+            try
+            {
+                if (Index < 0)
+                {
+                    return;
+                }
+                Modifier_Article ModifyForm = new Modifier_Article(dataGridView1.Rows[Index]);
+                //dataGridView1.Rows[RowIndex].Selected = false;
+                ModifyForm.StartPosition = FormStartPosition.CenterScreen;
+                //animator2.ShowSync(ModifyForm, false, Animation.Scale);
+                ModifyForm.ShowDialog(this);
+            }
+            catch (Exception EX)
+            {
+
+                MessageBox.Show(EX.Message, "Exeception", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 }

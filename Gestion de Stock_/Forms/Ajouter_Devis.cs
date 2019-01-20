@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,6 +70,10 @@ namespace Gestion_de_Stock_.Forms
             if (DA.IsDone)
             {
                 MessageBox.Show("Les Donner a Bien Ajouter");
+              
+                if (MessageBox.Show("voulez-vous imprimer cette Devis?", "impression",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes){
+                    new Devis_Report(txtNumdevis.Text).ShowDialog();
+                }
                 txtNumdevis.Text = DataAccess.GeneratNums();
             }
 
@@ -178,7 +183,7 @@ namespace Gestion_de_Stock_.Forms
                
                
             }
-            // had l method dyal   When khdama f  C#6 l fog 
+            // had l method dyal   "When" khdama f  C#6 l fog 
             catch (Exception ex) //when( ex.InnerException is SqlException" you condition is true...")
             {
                 if (ex.GetType().IsAssignableFrom(typeof(System.Data.SqlClient.SqlException)))
@@ -213,7 +218,10 @@ namespace Gestion_de_Stock_.Forms
   
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
 
+         
             int index = e.RowIndex;
             string Cname = dataGridView1.Columns[e.ColumnIndex].Name;
             _Ref = dataGridView1.Rows[index].Cells["Ref"].Value.ToString();
@@ -241,6 +249,12 @@ namespace Gestion_de_Stock_.Forms
                     break;
                 default:
                     break;
+            }
+            }
+            catch (Exception ex )
+            {
+
+                File.AppendAllText("ErrorLogs.txt", DateTime.Now.ToLongDateString()+Environment.NewLine+ "Ajouter Devis Form : "+ex.Message);
             }
         }
 

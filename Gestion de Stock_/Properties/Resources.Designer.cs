@@ -133,6 +133,36 @@ namespace Gestion_de_Stock_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Categorize_80NEWpx {
+            get {
+                object obj = ResourceManager.GetObject("Categorize_80NEWpx", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Categorize_96px {
+            get {
+                object obj = ResourceManager.GetObject("Categorize_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Consultation_Fact {
+            get {
+                object obj = ResourceManager.GetObject("Consultation_Fact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Consultation_Product {
             get {
                 object obj = ResourceManager.GetObject("Consultation_Product", resourceCulture);
@@ -146,6 +176,16 @@ namespace Gestion_de_Stock_.Properties {
         internal static System.Drawing.Bitmap Consultation_Product_2 {
             get {
                 object obj = ResourceManager.GetObject("Consultation_Product_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Facture {
+            get {
+                object obj = ResourceManager.GetObject("Facture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -316,6 +356,16 @@ namespace Gestion_de_Stock_.Properties {
         internal static System.Drawing.Bitmap Manag__Product2 {
             get {
                 object obj = ResourceManager.GetObject("Manag_ Product2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Maximize_Window_96px {
+            get {
+                object obj = ResourceManager.GetObject("Maximize Window_96px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

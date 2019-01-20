@@ -39,11 +39,29 @@ namespace Gestion_de_Stock_.Forms
 
         }
 
-    
+    bool TxtEmpty()
+        {
+            foreach (Control c in pnlContainer.Controls)
+            {
+                if (c is TextBox)
+                {
+                    if (String.IsNullOrEmpty((c as TextBox).Text))
+                    {
+                        return true;
+                    } 
+                }
+            }
+            return false;
+        }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             DAT = new DataAccess();
+            if (TxtEmpty())
+            {
+                MessageBox.Show("Tous Les Champ Requirer");
+                return;
+            }
             try
             {
                 //  @ID,@RaisonSocial,@Adresse,@Ville,@Tele
@@ -87,7 +105,7 @@ namespace Gestion_de_Stock_.Forms
         {
             
 
-            UC.LabelText = "Client";
+            UC.LabelText = "Ajouter Client";
 
             UC.Allignment = ContentAlignment.MiddleLeft;
             UC.Location = new Point(0, 72);

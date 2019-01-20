@@ -35,7 +35,6 @@
             AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facture_Detail));
             this.pnlContainer = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
@@ -44,9 +43,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.lblRestPayer = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.lblMontant = new System.Windows.Forms.Label();
-            this.lblNumReg = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
@@ -71,7 +68,6 @@
             // 
             // pnlContainer
             // 
-            this.pnlContainer.Controls.Add(this.bunifuFlatButton2);
             this.pnlContainer.Controls.Add(this.bunifuFlatButton1);
             this.pnlContainer.Controls.Add(this.dataGridView1);
             this.pnlContainer.Controls.Add(this.comboBoxClient);
@@ -80,9 +76,7 @@
             this.pnlContainer.Controls.Add(this.label25);
             this.pnlContainer.Controls.Add(this.lblRestPayer);
             this.pnlContainer.Controls.Add(this.label28);
-            this.pnlContainer.Controls.Add(this.label30);
             this.pnlContainer.Controls.Add(this.lblMontant);
-            this.pnlContainer.Controls.Add(this.lblNumReg);
             this.pnlContainer.Controls.Add(this.label33);
             this.animator1.SetDecoration(this.pnlContainer, AnimatorNS.DecorationType.None);
             this.animator2.SetDecoration(this.pnlContainer, AnimatorNS.DecorationType.None);
@@ -91,42 +85,6 @@
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(792, 364);
             this.pnlContainer.TabIndex = 30;
-            // 
-            // bunifuFlatButton2
-            // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(69)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(69)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "Supprimer";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animator1.SetDecoration(this.bunifuFlatButton2, AnimatorNS.DecorationType.None);
-            this.animator2.SetDecoration(this.bunifuFlatButton2, AnimatorNS.DecorationType.None);
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = global::Gestion_de_Stock_.Properties.Resources.icons8_Trash_96px_1;
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 70D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(648, 328);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(69)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(139)))), ((int)(((byte)(131)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(125, 32);
-            this.bunifuFlatButton2.TabIndex = 74;
-            this.bunifuFlatButton2.Text = "Supprimer";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton1
             // 
@@ -151,7 +109,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 70D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(497, 329);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(648, 329);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -205,7 +163,7 @@
             this.comboBoxClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxClient.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxClient.FormattingEnabled = true;
-            this.comboBoxClient.Location = new System.Drawing.Point(577, 15);
+            this.comboBoxClient.Location = new System.Drawing.Point(451, 9);
             this.comboBoxClient.Name = "comboBoxClient";
             this.comboBoxClient.Size = new System.Drawing.Size(166, 25);
             this.comboBoxClient.TabIndex = 72;
@@ -215,7 +173,7 @@
             this.animator2.SetDecoration(this.txtNumFact, AnimatorNS.DecorationType.None);
             this.animator1.SetDecoration(this.txtNumFact, AnimatorNS.DecorationType.None);
             this.txtNumFact.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtNumFact.Location = new System.Drawing.Point(320, 15);
+            this.txtNumFact.Location = new System.Drawing.Point(194, 9);
             this.txtNumFact.Name = "txtNumFact";
             this.txtNumFact.ReadOnly = true;
             this.txtNumFact.Size = new System.Drawing.Size(166, 23);
@@ -227,7 +185,7 @@
             this.animator2.SetDecoration(this.label24, AnimatorNS.DecorationType.None);
             this.animator1.SetDecoration(this.label24, AnimatorNS.DecorationType.None);
             this.label24.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(520, 15);
+            this.label24.Location = new System.Drawing.Point(394, 9);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 20);
             this.label24.TabIndex = 61;
@@ -239,7 +197,7 @@
             this.animator2.SetDecoration(this.label25, AnimatorNS.DecorationType.None);
             this.animator1.SetDecoration(this.label25, AnimatorNS.DecorationType.None);
             this.label25.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(408, 56);
+            this.label25.Location = new System.Drawing.Point(423, 50);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(117, 20);
             this.label25.TabIndex = 62;
@@ -252,7 +210,7 @@
             this.animator1.SetDecoration(this.lblRestPayer, AnimatorNS.DecorationType.None);
             this.lblRestPayer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRestPayer.ForeColor = System.Drawing.Color.Peru;
-            this.lblRestPayer.Location = new System.Drawing.Point(526, 57);
+            this.lblRestPayer.Location = new System.Drawing.Point(541, 51);
             this.lblRestPayer.Name = "lblRestPayer";
             this.lblRestPayer.Size = new System.Drawing.Size(45, 19);
             this.lblRestPayer.TabIndex = 64;
@@ -264,23 +222,11 @@
             this.animator2.SetDecoration(this.label28, AnimatorNS.DecorationType.None);
             this.animator1.SetDecoration(this.label28, AnimatorNS.DecorationType.None);
             this.label28.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(152, 57);
+            this.label28.Location = new System.Drawing.Point(167, 51);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(84, 20);
             this.label28.TabIndex = 65;
             this.label28.Text = "Montant  :";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.animator2.SetDecoration(this.label30, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.label30, AnimatorNS.DecorationType.None);
-            this.label30.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(47, 15);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(87, 20);
-            this.label30.TabIndex = 67;
-            this.label30.Text = "Num Reg : ";
             // 
             // lblMontant
             // 
@@ -289,24 +235,11 @@
             this.animator1.SetDecoration(this.lblMontant, AnimatorNS.DecorationType.None);
             this.lblMontant.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontant.ForeColor = System.Drawing.Color.Peru;
-            this.lblMontant.Location = new System.Drawing.Point(236, 58);
+            this.lblMontant.Location = new System.Drawing.Point(251, 52);
             this.lblMontant.Name = "lblMontant";
             this.lblMontant.Size = new System.Drawing.Size(45, 19);
             this.lblMontant.TabIndex = 68;
             this.lblMontant.Text = "0000";
-            // 
-            // lblNumReg
-            // 
-            this.lblNumReg.AutoSize = true;
-            this.animator2.SetDecoration(this.lblNumReg, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.lblNumReg, AnimatorNS.DecorationType.None);
-            this.lblNumReg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumReg.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblNumReg.Location = new System.Drawing.Point(132, 16);
-            this.lblNumReg.Name = "lblNumReg";
-            this.lblNumReg.Size = new System.Drawing.Size(45, 19);
-            this.lblNumReg.TabIndex = 69;
-            this.lblNumReg.Text = "0000";
             // 
             // label33
             // 
@@ -314,7 +247,7 @@
             this.animator2.SetDecoration(this.label33, AnimatorNS.DecorationType.None);
             this.animator1.SetDecoration(this.label33, AnimatorNS.DecorationType.None);
             this.label33.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(236, 15);
+            this.label33.Location = new System.Drawing.Point(110, 9);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(78, 20);
             this.label33.TabIndex = 70;
@@ -536,12 +469,9 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label lblRestPayer;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label lblMontant;
-        private System.Windows.Forms.Label lblNumReg;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private AnimatorNS.Animator animator1;
         private AnimatorNS.Animator animator2;

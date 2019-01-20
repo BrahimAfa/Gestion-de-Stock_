@@ -13,42 +13,42 @@ using AnimatorNS;
 
 namespace Gestion_de_Stock_.Forms
 {
-    public partial class Devis_Report : Form
+    public partial class BL_Report : Form
     {
         //Point _LocationPoint;
         //Size _size;
 
         UserControls.UC_LocationInForm UC = UserControls.UC_LocationInForm.Instance;
         bool ISMaxiMized = false;
-        public Devis_Report()
+        public BL_Report ()
         {
             InitializeComponent();
             //_LocationPoint = OwnerFormLocaion;
             //_size = OwnerFormSize;
 
             StartTiming();
-            UC_Initializ("Devis Report");
+            UC_Initializ("BL Report");
             MaximizeWindow();
             ISMaxiMized = true;
         }
-        public Devis_Report(string NumDevis)
+        public BL_Report(string NumBL)
         {
             InitializeComponent();
             //_LocationPoint = OwnerFormLocaion;
             //_size = OwnerFormSize;
 
             StartTiming();
-            UC_Initializ("Devis Report");
-            PrintDevisInitializ(NumDevis);
+            UC_Initializ("BL Report");
+            PrintBLInitializ(NumBL);
         }
-        void PrintDevisInitializ(string numdevis)
+        void PrintBLInitializ(string numdevis)
         {
             foreach (Control c in groupBox1.Controls)
             {
                 c.Visible = false;
             }
-            Devis_Reporting rp = new Devis_Reporting();
-            DataTable dt = DA.GetDevisInfos(numdevis);
+            BL_Reporting rp = new BL_Reporting();
+            DataTable dt = DA.GetBLInfos(numdevis);
             rp.SetDataSource(dt);
 
             crystalReportViewer1.ReportSource = rp;
@@ -57,29 +57,29 @@ namespace Gestion_de_Stock_.Forms
         private void bunifuImageButton3_Click(object sender, EventArgs e)
         {
 
-             if (String.IsNullOrEmpty(textBox1.Text))
-             {
-                 MessageBox.Show("le champe est Vide Entrer Num bon de Devis");
-                 return;
-             }
-             
-             else if (textBox1.Text.Length < 10)
-             {
-                    MessageBox.Show("Num de Devis est Incorecte !!!");
-                    return;
-             }
-            DataTable dt = DA.GetDevisInfos(textBox1.Text);
-              if (dt.Rows.Count==0)
-             {
-                 MessageBox.Show("Cette Num Pas Existe !");
-                 return;
-             }
-            
-            Devis_Reporting rp = new Devis_Reporting();
-             
-             rp.SetDataSource(dt);
-             
-             crystalReportViewer1.ReportSource = rp;
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("le champe est Vide Entrer Num de Bon de Livraison");
+                return;
+            }
+
+            else if (textBox1.Text.Length < 10)
+            {
+                MessageBox.Show("Num de BL est Incorecte !!!");
+                return;
+            }
+            DataTable dt = DA.GetBLInfos(textBox1.Text);
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Cette Num Pas Existe !");
+                return;
+            }
+
+            BL_Reporting rp = new BL_Reporting();
+
+            rp.SetDataSource(dt);
+
+            crystalReportViewer1.ReportSource = rp;
         }
 
         private void Devis_Report_Load(object sender, EventArgs e)

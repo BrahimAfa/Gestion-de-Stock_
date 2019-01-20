@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Gestion_De_StockConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Gestion_De_StockConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Gestion_de_Stock_.Properties.Settings.GlobalReference.Default.Gestion_De_StockConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BL_InfoTableAdapter" GeneratorDataComponentClassName="BL_InfoTableAdapter" Name="BL_Info" UserDataComponentName="BL_InfoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Gestion_De_StockConnectionString (Settings)" DbObjectName="Gestion_De_Stock.dbo.BL_Info" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NUMBL, IDCLIENT, REF, DESCRIPTION, QTE, PRIX_VENTEHT, TXREMISE, PT_HT, PT_TTC, DateBL, OBSERVATION FROM dbo.BL_Info</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NUMBL" DataSetColumn="NUMBL" />
+              <Mapping SourceColumn="IDCLIENT" DataSetColumn="IDCLIENT" />
+              <Mapping SourceColumn="REF" DataSetColumn="REF" />
+              <Mapping SourceColumn="DESCRIPTION" DataSetColumn="DESCRIPTION" />
+              <Mapping SourceColumn="QTE" DataSetColumn="QTE" />
+              <Mapping SourceColumn="PRIX_VENTEHT" DataSetColumn="PRIX_VENTEHT" />
+              <Mapping SourceColumn="TXREMISE" DataSetColumn="TXREMISE" />
+              <Mapping SourceColumn="PT_HT" DataSetColumn="PT_HT" />
+              <Mapping SourceColumn="PT_TTC" DataSetColumn="PT_TTC" />
+              <Mapping SourceColumn="DateBL" DataSetColumn="DateBL" />
+              <Mapping SourceColumn="OBSERVATION" DataSetColumn="OBSERVATION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BL_Info" msprop:Generator_TableClassName="BL_InfoDataTable" msprop:Generator_TableVarName="tableBL_Info" msprop:Generator_TablePropName="BL_Info" msprop:Generator_RowDeletingName="BL_InfoRowDeleting" msprop:Generator_RowChangingName="BL_InfoRowChanging" msprop:Generator_RowEvHandlerName="BL_InfoRowChangeEventHandler" msprop:Generator_RowDeletedName="BL_InfoRowDeleted" msprop:Generator_UserTableName="BL_Info" msprop:Generator_RowChangedName="BL_InfoRowChanged" msprop:Generator_RowEvArgName="BL_InfoRowChangeEvent" msprop:Generator_RowClassName="BL_InfoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NUMBL" msprop:Generator_ColumnVarNameInTable="columnNUMBL" msprop:Generator_ColumnPropNameInRow="NUMBL" msprop:Generator_ColumnPropNameInTable="NUMBLColumn" msprop:Generator_UserColumnName="NUMBL">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDCLIENT" msprop:Generator_ColumnVarNameInTable="columnIDCLIENT" msprop:Generator_ColumnPropNameInRow="IDCLIENT" msprop:Generator_ColumnPropNameInTable="IDCLIENTColumn" msprop:Generator_UserColumnName="IDCLIENT" type="xs:int" />
+              <xs:element name="REF" msprop:Generator_ColumnVarNameInTable="columnREF" msprop:Generator_ColumnPropNameInRow="REF" msprop:Generator_ColumnPropNameInTable="REFColumn" msprop:Generator_UserColumnName="REF">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPTION" msprop:Generator_ColumnPropNameInRow="DESCRIPTION" msprop:Generator_ColumnPropNameInTable="DESCRIPTIONColumn" msprop:Generator_UserColumnName="DESCRIPTION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QTE" msprop:Generator_ColumnVarNameInTable="columnQTE" msprop:Generator_ColumnPropNameInRow="QTE" msprop:Generator_ColumnPropNameInTable="QTEColumn" msprop:Generator_UserColumnName="QTE" type="xs:long" minOccurs="0" />
+              <xs:element name="PRIX_VENTEHT" msprop:Generator_ColumnVarNameInTable="columnPRIX_VENTEHT" msprop:Generator_ColumnPropNameInRow="PRIX_VENTEHT" msprop:Generator_ColumnPropNameInTable="PRIX_VENTEHTColumn" msprop:Generator_UserColumnName="PRIX_VENTEHT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TXREMISE" msprop:Generator_ColumnVarNameInTable="columnTXREMISE" msprop:Generator_ColumnPropNameInRow="TXREMISE" msprop:Generator_ColumnPropNameInTable="TXREMISEColumn" msprop:Generator_UserColumnName="TXREMISE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PT_HT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPT_HT" msprop:Generator_ColumnPropNameInRow="PT_HT" msprop:Generator_ColumnPropNameInTable="PT_HTColumn" msprop:Generator_UserColumnName="PT_HT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PT_TTC" msprop:Generator_ColumnVarNameInTable="columnPT_TTC" msprop:Generator_ColumnPropNameInRow="PT_TTC" msprop:Generator_ColumnPropNameInTable="PT_TTCColumn" msprop:Generator_UserColumnName="PT_TTC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DateBL" msprop:Generator_ColumnVarNameInTable="columnDateBL" msprop:Generator_ColumnPropNameInRow="DateBL" msprop:Generator_ColumnPropNameInTable="DateBLColumn" msprop:Generator_UserColumnName="DateBL" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OBSERVATION" msprop:Generator_ColumnVarNameInTable="columnOBSERVATION" msprop:Generator_ColumnPropNameInRow="OBSERVATION" msprop:Generator_ColumnPropNameInTable="OBSERVATIONColumn" msprop:Generator_UserColumnName="OBSERVATION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BL_Info" />
+      <xs:field xpath="mstns:NUMBL" />
+      <xs:field xpath="mstns:REF" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

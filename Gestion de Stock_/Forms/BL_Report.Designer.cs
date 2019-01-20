@@ -1,6 +1,6 @@
 ﻿namespace Gestion_de_Stock_.Forms
 {
-    partial class Devis_Report
+    partial class BL_Report
     {
         /// <summary>
         /// Required designer variable.
@@ -31,22 +31,22 @@
             this.components = new System.ComponentModel.Container();
             AnimatorNS.Animation animation4 = new AnimatorNS.Animation();
             AnimatorNS.Animation animation3 = new AnimatorNS.Animation();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Devis_Report));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BL_Report));
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlExit = new System.Windows.Forms.Panel();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.pnlHeader = new System.Windows.Forms.Panel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.animator1 = new AnimatorNS.Animator(this.components);
@@ -54,9 +54,9 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             this.pnlLogo.SuspendLayout();
             this.pnlExit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +71,7 @@
             this.pnlContainer.Location = new System.Drawing.Point(0, 127);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(792, 364);
-            this.pnlContainer.TabIndex = 42;
+            this.pnlContainer.TabIndex = 46;
             // 
             // crystalReportViewer1
             // 
@@ -131,28 +131,11 @@
             this.label2.AutoSize = true;
             this.animator1.SetDecoration(this.label2, AnimatorNS.DecorationType.None);
             this.animator2.SetDecoration(this.label2, AnimatorNS.DecorationType.None);
-            this.label2.Location = new System.Drawing.Point(161, 16);
+            this.label2.Location = new System.Drawing.Point(185, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 16);
+            this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Num Devis";
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.animator2.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
-            this.bunifuImageButton3.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_Search_96px_1;
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(741, 11);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(36, 27);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton3.TabIndex = 2;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
+            this.label2.Text = "Num BL";
             // 
             // textBox1
             // 
@@ -180,7 +163,7 @@
             this.pnlLogo.Location = new System.Drawing.Point(0, 20);
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(792, 107);
-            this.pnlLogo.TabIndex = 41;
+            this.pnlLogo.TabIndex = 45;
             // 
             // lblDate
             // 
@@ -234,7 +217,35 @@
             this.pnlExit.Location = new System.Drawing.Point(792, 20);
             this.pnlExit.Name = "pnlExit";
             this.pnlExit.Size = new System.Drawing.Size(40, 471);
-            this.pnlExit.TabIndex = 40;
+            this.pnlExit.TabIndex = 44;
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
+            this.animator2.SetDecoration(this.pnlHeader, AnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.pnlHeader, AnimatorNS.DecorationType.None);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(832, 20);
+            this.pnlHeader.TabIndex = 43;
+            // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
+            this.animator2.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
+            this.bunifuImageButton3.Image = global::Gestion_de_Stock_.Properties.Resources.icons8_Search_96px_1;
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(741, 11);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(36, 27);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton3.TabIndex = 2;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
+            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
             // 
             // bunifuImageButton2
             // 
@@ -243,9 +254,9 @@
             this.animator1.SetDecoration(this.bunifuImageButton2, AnimatorNS.DecorationType.None);
             this.bunifuImageButton2.Image = global::Gestion_de_Stock_.Properties.Resources.Maximize_Window_96px;
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(-2, 51);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(-2, 50);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(48, 48);
+            this.bunifuImageButton2.Size = new System.Drawing.Size(42, 44);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bunifuImageButton2.TabIndex = 1;
             this.bunifuImageButton2.TabStop = false;
@@ -267,17 +278,6 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
-            this.animator2.SetDecoration(this.pnlHeader, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.pnlHeader, AnimatorNS.DecorationType.None);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(832, 20);
-            this.pnlHeader.TabIndex = 39;
             // 
             // bunifuDragControl1
             // 
@@ -341,7 +341,7 @@
             this.bunifuElipse2.ElipseRadius = 10;
             this.bunifuElipse2.TargetControl = this;
             // 
-            // Devis_Report
+            // BL_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -353,17 +353,16 @@
             this.animator1.SetDecoration(this, AnimatorNS.DecorationType.None);
             this.animator2.SetDecoration(this, AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Devis_Report";
+            this.Name = "BL_Report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Devis_Report";
-            this.Load += new System.EventHandler(this.Devis_Report_Load);
+            this.Text = "BL_Report";
             this.pnlContainer.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             this.pnlLogo.ResumeLayout(false);
             this.pnlLogo.PerformLayout();
             this.pnlExit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
@@ -373,6 +372,12 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlContainer;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
@@ -381,12 +386,6 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.Panel pnlHeader;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
-        private System.Windows.Forms.TextBox textBox1;
         private AnimatorNS.Animator animator2;
         private AnimatorNS.Animator animator1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;

@@ -78,7 +78,7 @@ namespace Gestion_de_Stock_.Forms
             if (!String.IsNullOrEmpty(textBox1.Text))
             {
                 dv.Table = DataAccess.GetClient();
-                dv.RowFilter = "RAISONSOCIALE LIKE '%" + textBox1.Text + "%'";
+                dv.RowFilter = "IDCLIENT LIKE '%" + textBox1.Text + "%'";
                 dataGridView1.DataSource = dv;
             }
             else

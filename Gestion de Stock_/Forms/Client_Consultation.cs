@@ -104,7 +104,7 @@ namespace Gestion_de_Stock_.Forms
             textBox1.Visible = true;
             textBox1.BringToFront();
             label2.Visible = true;
-            label2.Text = "Tele Client :";
+            label2.Text = "Tele de Client :";
         }
         void TousFilter()
         {

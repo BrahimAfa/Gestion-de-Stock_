@@ -49,7 +49,11 @@ namespace Gestion_de_Stock_.Forms
 
             if (DA.IsDone)
             {
-                MessageBox.Show("Les Donner a Bien Ajouter");
+                MessageBox.Show("les données ont été ajoutées avec succès", "Succèsé",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                if (MessageBox.Show("voulez-vous imprimer cette BL?", "impression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    new BL_Report(txtNumBL.Text).ShowDialog();
+                }
                 txtNumBL.Text = DataAccess.GeneratNums(true);
             }
 
@@ -95,7 +99,7 @@ namespace Gestion_de_Stock_.Forms
 
         private void BunifuFlatButton2_Delete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("tu va supprimer cette BL ", "Supprision", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Voulez-vous supprimer cette BL ", "Supprision", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 dataGridView1.Rows.Clear();
                 DA.Supprimer_BD(DataAccess.Manage_Stock.BL, txtNumBL.Text);
@@ -377,7 +381,7 @@ namespace Gestion_de_Stock_.Forms
             //coulum index 6 == Button COlumn !!!! to remember
             if (e.ColumnIndex == 6 && e.RowIndex >= 0 && !dataGridView1.Rows[e.RowIndex].IsNewRow)
             {
-                if (MessageBox.Show("Do you want to delete this Article", "Supprision", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous supprimer cet article?", "Supprision", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     DA.Suppr_Article_BL(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(), txtNumBL.Text);
                     dataGridView1.Rows.RemoveAt(e.RowIndex);
@@ -497,7 +501,7 @@ namespace Gestion_de_Stock_.Forms
                 }
                 else
                 {
-                    MessageBox.Show("les Donner est Incorrect!!!!");
+                    MessageBox.Show("le Num de Devis est Incorrect!!!!");
                 }
             }
             else
@@ -508,7 +512,7 @@ namespace Gestion_de_Stock_.Forms
        private void Remplir_Par_Devis(DataTable Devis,DataTable Devis_Dtail)
         {
            //dataGridView1.Columns[3].DefaultCellStyle.Format = "P";
-            txtNumBL.Text = Devis.Rows[0][0].ToString();
+            //txtNumBL.Text = Devis.Rows[0][0].ToString();
             ComboClient.SelectedValue = Devis.Rows[0][1].ToString();
             txtObserv.Text = Devis.Rows[0][3].ToString();
             foreach (DataRow item in Devis_Dtail.Rows)

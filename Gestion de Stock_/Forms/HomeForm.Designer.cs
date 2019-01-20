@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            AnimatorNS.Animation animation2 = new AnimatorNS.Animation();
-            AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation4 = new AnimatorNS.Animation();
+            AnimatorNS.Animation animation3 = new AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlExit = new System.Windows.Forms.Panel();
@@ -41,8 +41,6 @@
             this.pnlCtrlContainar = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.animator1 = new AnimatorNS.Animator(this.components);
             this.animator2 = new AnimatorNS.Animator(this.components);
             this.tileGroupElement2 = new Telerik.WinControls.UI.TileGroupElement();
@@ -72,7 +70,6 @@
             this.LiveTileGereDevis = new Telerik.WinControls.UI.RadLiveTileElement();
             this.radTileDevisRaport = new Telerik.WinControls.UI.RadTileElement();
             this.radTileBLRaport = new Telerik.WinControls.UI.RadTileElement();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.radLiveTileElement1 = new Telerik.WinControls.UI.RadLiveTileElement();
@@ -91,7 +88,6 @@
             this.pnlLogo.SuspendLayout();
             this.pnlCtrlContainar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +106,6 @@
             // pnlExit
             // 
             this.pnlExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
-            this.pnlExit.Controls.Add(this.bunifuImageButton3);
             this.pnlExit.Controls.Add(this.bunifuImageButton2);
             this.pnlExit.Controls.Add(this.bunifuImageButton1);
             this.animator2.SetDecoration(this.pnlExit, AnimatorNS.DecorationType.None);
@@ -196,62 +191,48 @@
             this.bunifuElipse2.ElipseRadius = 10;
             this.bunifuElipse2.TargetControl = this;
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.pnlHeader;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuDragControl2
-            // 
-            this.bunifuDragControl2.Fixed = true;
-            this.bunifuDragControl2.Horizontal = true;
-            this.bunifuDragControl2.TargetControl = this.pnlExit;
-            this.bunifuDragControl2.Vertical = true;
-            // 
             // animator1
             // 
             this.animator1.AnimationType = AnimatorNS.AnimationType.Transparent;
             this.animator1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 1F;
-            this.animator1.DefaultAnimation = animation2;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 1F;
+            this.animator1.DefaultAnimation = animation4;
             this.animator1.Interval = 8;
             // 
             // animator2
             // 
             this.animator2.AnimationType = AnimatorNS.AnimationType.VertSlide;
             this.animator2.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.animator2.DefaultAnimation = animation1;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.animator2.DefaultAnimation = animation3;
             this.animator2.Interval = 15;
             // 
             // tileGroupElement2
@@ -441,7 +422,7 @@
             this.radTileElement1.Image = global::Gestion_de_Stock_.Properties.Resources.BDicon;
             this.radTileElement1.Name = "radTileElement1";
             this.radTileElement1.Row = 1;
-            this.radTileElement1.Text = "Saisir un Devis Client";
+            this.radTileElement1.Text = "Saisir un Devis";
             this.radTileElement1.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.radTileElement1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.radTileElement1.TextWrap = true;
@@ -456,7 +437,7 @@
             this.radTileElement2.Image = global::Gestion_de_Stock_.Properties.Resources.BLICON2;
             this.radTileElement2.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.radTileElement2.Name = "radTileElement2";
-            this.radTileElement2.Text = "Saisir un Bon de Livraison Client";
+            this.radTileElement2.Text = "Saisir un Bon de Livraison";
             this.radTileElement2.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.radTileElement2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.radTileElement2.TextWrap = true;
@@ -523,17 +504,25 @@
             // radTileElement10
             // 
             this.radTileElement10.ColSpan = 2;
+            this.radTileElement10.Image = global::Gestion_de_Stock_.Properties.Resources.Facture;
             this.radTileElement10.Name = "radTileElement10";
             this.radTileElement10.Text = "Facture Reglement";
+            this.radTileElement10.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radTileElement10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.radTileElement10.TextWrap = true;
             this.radTileElement10.Click += new System.EventHandler(this.radTileElement10_Click);
             // 
             // radTileElement11
             // 
             this.radTileElement11.ColSpan = 2;
+            this.radTileElement11.Image = global::Gestion_de_Stock_.Properties.Resources.Consultation_Fact;
+            this.radTileElement11.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radTileElement11.Name = "radTileElement11";
             this.radTileElement11.Row = 1;
             this.radTileElement11.Text = "Consultation";
+            this.radTileElement11.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radTileElement11.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radTileElement11.UseCompatibleTextRendering = true;
             this.radTileElement11.Click += new System.EventHandler(this.radTileElement11_Click);
             // 
             // gestionAvancee
@@ -567,11 +556,14 @@
             this.LiveTileGereFamilles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
             this.LiveTileGereFamilles.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(35)))), ((int)(((byte)(203)))));
             this.LiveTileGereFamilles.Column = 2;
+            this.LiveTileGereFamilles.Image = global::Gestion_de_Stock_.Properties.Resources.Categorize_80NEWpx;
+            this.LiveTileGereFamilles.ImageAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.LiveTileGereFamilles.Name = "LiveTileGereFamilles";
             this.LiveTileGereFamilles.Text = "Gére Les Familles";
             this.LiveTileGereFamilles.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.LiveTileGereFamilles.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.LiveTileGereFamilles.TextWrap = true;
+            this.LiveTileGereFamilles.Click += new System.EventHandler(this.LiveTileGereFamilles_Click);
             // 
             // LiveTileGereDevis
             // 
@@ -620,24 +612,7 @@
             this.radTileBLRaport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.radTileBLRaport.TextOrientation = System.Windows.Forms.Orientation.Vertical;
             this.radTileBLRaport.TextWrap = true;
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.animator2.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.bunifuImageButton3, AnimatorNS.DecorationType.None);
-            this.bunifuImageButton3.Image = global::Gestion_de_Stock_.Properties.Resources.Minus_96px;
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(-4, 107);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(48, 48);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton3.TabIndex = 1;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
+            this.radTileBLRaport.Click += new System.EventHandler(this.radTileBLRaport_Click);
             // 
             // bunifuImageButton2
             // 
@@ -895,7 +870,6 @@
             this.pnlLogo.PerformLayout();
             this.pnlCtrlContainar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
@@ -911,8 +885,6 @@
         private Telerik.WinControls.UI.RadPanorama radPanorama1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
@@ -937,7 +909,6 @@
         private AnimatorNS.Animator animator2;
         private Telerik.WinControls.UI.RadTileElement radTileDevisRaport;
         private Telerik.WinControls.UI.RadTileElement radTileBLRaport;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
         private Telerik.WinControls.UI.TileGroupElement tileGroupElement1;
         private Telerik.WinControls.UI.RadTileElement radTileElement10;
         private Telerik.WinControls.UI.RadTileElement radTileElement11;

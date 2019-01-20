@@ -27,7 +27,6 @@ namespace Gestion_de_Stock_.DAL
 
 
         #region Fille_Dataset  
-
         public static DataTable GetFamilles()
         {
             open();
@@ -40,6 +39,7 @@ namespace Gestion_de_Stock_.DAL
             close();
             return MainData.Tables["Familles"];
         }
+
         public static DataTable GetArticles()
         {
             open();
@@ -124,6 +124,13 @@ namespace Gestion_de_Stock_.DAL
             close();
             return MainData.Tables["BL"];
         }
+        public static DataTable GetBL(string NumBL)
+        {
+            DataTable dt = new DataTable();
+            da = new SqlDataAdapter("select * from BL where NumBL ='"+NumBL+"'", con);
+            da.Fill(dt);
+            return dt;
+        }
         public static DataTable GetDetailBL(string NumBL)
         {
             open();
@@ -143,6 +150,13 @@ namespace Gestion_de_Stock_.DAL
         {
             DataTable dt = new DataTable();
             da = new SqlDataAdapter("Select * from Devis_Info where NumDevis = '" + NumDevis + "'", con);
+            da.Fill(dt);
+            return dt;
+        }
+        public DataTable GetBLInfos(string Numbl)
+        {
+            DataTable dt = new DataTable();
+            da = new SqlDataAdapter("Select * from BL_Info where NumBL = '" + Numbl + "'", con);
             da.Fill(dt);
             return dt;
         }
@@ -181,10 +195,10 @@ namespace Gestion_de_Stock_.DAL
                 close();
                 return TXTVA;
             }
-            catch (Exception EX)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(EX.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             return 0;
 
@@ -273,7 +287,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
                 IsDone = false;
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         #endregion
@@ -296,7 +310,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         #endregion
@@ -363,11 +377,11 @@ namespace Gestion_de_Stock_.DAL
             {
                 // the main problem that caused the problem
                 IsDone = false;
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 try
                 {
                     //attempting to rollback and if there is a problem we show it
-                    MessageBox.Show("entered to rollback");
+                    MessageBox.Show("Opération d'ajout Annulée");
                     trans.Rollback();
                 }
                 catch (Exception ex1)
@@ -446,11 +460,11 @@ namespace Gestion_de_Stock_.DAL
             {
                 // the main problem that caused the problem
                 IsDone = false;
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 try
                 {
                     //attempting to rollback and if there is a problem we show it
-                    MessageBox.Show("entered to rollback");
+                    MessageBox.Show("Opération d'ajout Annulée");
                     trans.Rollback();
                 }
                 catch (Exception ex1)
@@ -488,7 +502,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         #endregion
@@ -692,7 +706,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
 
             }
             finally
@@ -720,7 +734,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 //throw;
 
             }
@@ -752,7 +766,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 //throw;
 
             }
@@ -780,7 +794,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 //throw;
 
             }
@@ -811,7 +825,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 //throw;
 
             }
@@ -839,7 +853,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 //throw;
 
             }
@@ -897,7 +911,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
                 IsDone = false;
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         #endregion
@@ -921,7 +935,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return false;
             }
         }
@@ -989,11 +1003,11 @@ namespace Gestion_de_Stock_.DAL
             {
                 // the main problem that caused the problem
                 IsDone = false;
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 try
                 {
                     //attempting to rollback and if there is a problem we show it
-                    MessageBox.Show("entered to rollback");
+                    MessageBox.Show("Opération de Modification Annulée");
                     trans.Rollback();
                 }
                 catch (Exception ex1)
@@ -1073,11 +1087,11 @@ namespace Gestion_de_Stock_.DAL
             {
                 // the main problem that caused the problem
                 IsDone = false;
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 try
                 {
                     //attempting to rollback and if there is a problem we show it
-                    MessageBox.Show("entered to rollback");
+                    MessageBox.Show("Opération de Modification Annulée");
                     trans.Rollback();
                 }
                 catch (Exception ex1)
@@ -1113,7 +1127,7 @@ namespace Gestion_de_Stock_.DAL
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         #endregion
@@ -1208,11 +1222,11 @@ namespace Gestion_de_Stock_.DAL
             {
                 // the main problem that caused the problem
                 IsDone = false;
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 try
                 {
                     //attempting to rollback and if there is a problem we show it
-                    MessageBox.Show("entered to rollback");
+                    MessageBox.Show("Opération d'ajout Annulée");
                     trans.Rollback();
                 }
                 catch (Exception ex1)
@@ -1313,11 +1327,11 @@ namespace Gestion_de_Stock_.DAL
             {
                 // the main problem that caused the problem
                 IsDone = false;
-                MessageBox.Show(ex.Message);
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 try
                 {
                     //attempting to rollback and if there is a problem we show it
-                    MessageBox.Show("entered to rollback");
+                    MessageBox.Show("Opération de Modification Annulée");
                     trans.Rollback();
                 }
                 catch (Exception ex1)
@@ -1375,7 +1389,38 @@ namespace Gestion_de_Stock_.DAL
 
             return dt;
         }
-        
+
+
+        public DataTable GetFamilles(string idFamille)
+        {
+            DataTable dt = new DataTable();
+            da = new SqlDataAdapter("select * from Familles where IDFAMILLE ='"+ idFamille + "'", con);
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public bool ModifierFamille(string IdFamill, string Famill)
+        {
+            try
+            {
+
+                open();
+
+                cmd = new SqlCommand("Update  Familles set Famille = @Famill where IDFAMILLE = @id", con);
+                cmd.Parameters.AddWithValue("@id",IdFamill);
+                cmd.Parameters.AddWithValue("@Famill", Famill);
+                cmd.ExecuteNonQuery();
+                close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                   MessageBox.Show(ex.Message, "Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return false;
+            }
+        }
     } 
 
 
